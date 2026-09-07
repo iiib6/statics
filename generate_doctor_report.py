@@ -1,3 +1,4 @@
+import os
 import docx
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -8,7 +9,7 @@ from docx.oxml.ns import nsdecls
 def create_doctor_report():
     doc = docx.Document()
     
-    # 1 inch margins all around
+    # Page setup - 1 inch margins
     for section in doc.sections:
         section.top_margin = Inches(1.0)
         section.bottom_margin = Inches(1.0)
@@ -125,7 +126,7 @@ def create_doctor_report():
 
     p_sub = doc.add_paragraph()
     p_sub.paragraph_format.space_after = Pt(10)
-    run_sub = p_sub.add_run("Clinical Evaluation of Pit and Fissure Sealant Retention and Caries Prevention: A 3-Month Longitudinal Investigation\nPrepared for International Journal Publication (Scopus Indexed)")
+    run_sub = p_sub.add_run("Clinical Evaluation of Pit and Fissure Sealant Retention and Associated Caries Incidence: A 3-Month Longitudinal Investigation\nPrepared for International Journal Publication (Scopus Indexed)")
     run_sub.font.name = "Calibri"
     run_sub.font.size = Pt(11.5)
     run_sub.font.italic = True
@@ -151,9 +152,9 @@ def create_doctor_report():
     meta_table.rows[1].cells[1].paragraphs[0].add_run("3 Months Post-Application")
 
     meta_table.rows[2].cells[0].paragraphs[0].add_run("Evaluation Index: ").bold = True
-    meta_table.rows[2].cells[0].paragraphs[0].add_run("Simonsen's Retention Criteria (Scores 0, 1, 2)")
-    meta_table.rows[2].cells[1].paragraphs[0].add_run("Statistical Tests: ").bold = True
-    meta_table.rows[2].cells[1].paragraphs[0].add_run("Mann-Whitney U, Pearson χ², Fisher's Exact, Kruskal-Wallis (α = 0.05)")
+    meta_table.rows[2].cells[0].paragraphs[0].add_run("Simonsen's Criteria (Score 0: Complete, 1: Partial, 2: Lost)")
+    meta_table.rows[2].cells[1].paragraphs[0].add_run("Statistical Framework: ").bold = True
+    meta_table.rows[2].cells[1].paragraphs[0].add_run("Tooth-Level (Mann-Whitney U, Kruskal-Wallis, Fisher-Freeman-Halton) & Clustered Sensitivity (GEE)")
 
     doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
@@ -181,7 +182,6 @@ def create_doctor_report():
     t1 = doc.add_table(rows=len(t1_data) + 1, cols=4)
     for j, h in enumerate(t1_headers):
         t1.rows[0].cells[j].paragraphs[0].text = h
-    # fill data
     row_idx = 1
     for item in t1_data:
         t1.rows[row_idx].cells[0].paragraphs[0].text = item[0]
@@ -197,52 +197,56 @@ def create_doctor_report():
     # -------------------------------------------------------------
     add_custom_heading("2. Primary Clinical Outcomes at 3-Month Follow-Up", level=1)
     
-    p = doc.add_paragraph("At the 3-month post-placement clinical evaluation, the overall retention rate according to Simonsen's criteria was as follows:")
+    p = doc.add_paragraph("At the 3-month post-placement clinical evaluation, retention outcomes were categorized according to Simonsen's criteria into distinct levels:")
     
     bp_r1 = doc.add_paragraph(style='List Bullet')
-    bp_r1.add_run("Score 0 (Completely Retained): ").bold = True
-    bp_r1.add_run("85 teeth (72.0%) demonstrated intact, complete sealant coverage with fully sealed pit and fissure systems.")
+    bp_r1.add_run("Complete Retention (Score 0): ").bold = True
+    bp_r1.add_run("85 teeth (72.0%) showed complete coverage with all pit and fissure grooves fully sealed.")
     
     bp_r2 = doc.add_paragraph(style='List Bullet')
-    bp_r2.add_run("Score 1 (Partially Retained): ").bold = True
-    bp_r2.add_run("28 teeth (23.7%) exhibited partial sealant loss with portions of the grooves exposed, while the remaining material remained bonded.")
+    bp_r2.add_run("Partial Retention (Score 1): ").bold = True
+    bp_r2.add_run("28 teeth (23.7%) exhibited partial sealant loss with portions of the grooves exposed, while the remaining restoration remained bonded.")
 
     bp_r3 = doc.add_paragraph(style='List Bullet')
-    bp_r3.add_run("Score 2 (Completely Missing): ").bold = True
-    bp_r3.add_run("5 teeth (4.2%) suffered total sealant dislodgement with complete loss of the protective resin layer.")
+    bp_r3.add_run("Complete Loss (Score 2): ").bold = True
+    bp_r3.add_run("5 teeth (4.2%) suffered total sealant dislodgement with complete loss of the protective resin material.")
 
-    p_cum = doc.add_paragraph("Combining Scores 0 and 1, the total satisfactory retention rate achieved was 95.8% (n = 113). Concurrently, 95.8% (n = 113) of evaluated teeth remained completely caries-free (Sound), while active occlusal caries incidence occurred in 4.2% (n = 5).")
+    p_cum = doc.add_paragraph("Defining clinical success comprehensively, satisfactory retention (Score 0 + Score 1) was observed in 95.8% of teeth (n = 113). Concurrently, 95.8% (n = 113) of evaluated teeth remained caries-free (sound), whereas new occlusal carious lesions developed in 4.2% (n = 5) of the evaluated teeth.")
 
     # Table 2: Overall Condition
-    add_custom_heading("Table 2. Cumulative clinical retention and caries incidence 3 months post-placement (N = 118)", level=3)
+    add_custom_heading("Table 2. Overall retention distribution (Simonsen's criteria) and caries incidence at 3 months (N = 118)", level=3)
     t2 = doc.add_table(rows=7, cols=3)
-    t2_headers = ["Clinical Parameter", "Simonsen Criteria / Outcome", "N (%)"]
+    t2_headers = ["Clinical Parameter", "Simonsen Criteria / Clinical Category", "N (%)"]
     for j, h in enumerate(t2_headers):
         t2.rows[0].cells[j].paragraphs[0].text = h
     t2_data = [
-        ["Retention Rate (Simonsen's)", "Score 0: Completely Retained", "85 (72.0%)"],
-        ["", "Score 1: Partially Retained", "28 (23.7%)"],
-        ["", "Score 2: Completely Missing", "5 (4.2%)"],
-        ["Cumulative Retention", "Satisfactory Retention (Score 0 + Score 1)", "113 (95.8%)"],
-        ["Caries Incidence at 3 Months", "Caries-Free (Sound Tooth)", "113 (95.8%)"],
+        ["Sealant Retention Status", "Score 0: Complete Retention", "85 (72.0%)"],
+        ["", "Score 1: Partial Retention", "28 (23.7%)"],
+        ["", "Score 2: Complete Loss", "5 (4.2%)"],
+        ["Satisfactory Retention", "Combined Score 0 + Score 1", "113 (95.8%)"],
+        ["3-Month Caries Status", "Caries-Free (Sound Tooth)", "113 (95.8%)"],
         ["", "Caries Incidence (Decayed)", "5 (4.2%)"]
     ]
     for i, row_data in enumerate(t2_data):
         for j, val in enumerate(row_data):
             t2.rows[i+1].cells[j].paragraphs[0].text = val
     style_academic_table(t2, [2.5, 3.2, 1.5], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER])
-    doc.add_paragraph().paragraph_format.space_after = Pt(8)
+    
+    p_t2_note = doc.add_paragraph("Note: Complete retention alone was 72.0% (n = 85); when including partially retained sealants that still offered clinical coverage, satisfactory retention was 95.8% (n = 113).")
+    p_t2_note.runs[0].font.size = Pt(8.5)
+    p_t2_note.runs[0].font.italic = True
+    p_t2_note.paragraph_format.space_after = Pt(8)
 
     # -------------------------------------------------------------
     # 3. STATISTICAL FINDINGS & CLINICAL INTERPRETATIONS
     # -------------------------------------------------------------
-    add_custom_heading("3. Statistical Analysis of Findings & In-Depth Clinical Deductions", level=1)
+    add_custom_heading("3. Statistical Analysis of Findings & Clinical Deductions", level=1)
 
     # FINDING 1: Tooth Type
-    add_custom_heading("3.1 Finding 1: Tooth Type Disparity (Premolars vs. Molars)", level=2)
+    add_custom_heading("3.1 Finding 1: Anatomical Determinants — Premolars vs. Molars", level=2)
     p = doc.add_paragraph("Statistical Result: A highly statistically significant difference in sealant retention was detected between permanent premolars and permanent molars (Mann-Whitney U = 1155.5, Z = -3.054, p = 0.002; Pearson Chi-Square χ² = 13.291, df = 2, p = 0.0013).")
     
-    p = doc.add_paragraph("Observed Data: Premolars achieved an 80.5% complete retention rate (n = 62/77) and experienced zero total loss (0.0%). In sharp contrast, molars exhibited a 56.1% complete retention rate (n = 23/41), a 31.7% partial loss rate (n = 13/41), and accounted for 100% of all complete loss cases (12.2%, n = 5/41).")
+    p = doc.add_paragraph("Observed Data: Premolars achieved an 80.5% complete retention rate (n = 62/77) and experienced zero complete loss (0.0%). In sharp contrast, molars exhibited a 56.1% complete retention rate (n = 23/41), a 31.7% partial loss rate (n = 13/41), and accounted for 100% of all complete loss cases (12.2%, n = 5/41).")
     
     p = doc.add_paragraph("Clinical & Biological Rationale for the Manuscript:")
     bp_t1 = doc.add_paragraph(style='List Bullet')
@@ -251,11 +255,15 @@ def create_doctor_report():
     
     bp_t2 = doc.add_paragraph(style='List Bullet')
     bp_t2.add_run("2. Moisture Control & Saliva Contamination: ").bold = True
-    bp_t2.add_run("Isolation in the posterior molar region is technically demanding in pediatric patients due to proximity to the parotid duct and active tongue movements, increasing the risk of micro-salivary contamination during bonding.")
+    bp_t2.add_run("Isolation in the posterior molar region is technically demanding in pediatric patients due to pooling of saliva in the posterior vestibule and active tongue movements, increasing the risk of micro-salivary contamination during the sensitive bonding procedure.")
 
     bp_t3 = doc.add_paragraph(style='List Bullet')
-    bp_t3.add_run("3. Masticatory Load Concentration: ").bold = True
-    bp_t3.add_run("Permanent first molars absorb the highest vertical and lateral chewing forces, subjecting molar sealants to greater shearing stress than premolars.")
+    bp_t3.add_run("3. Eruption Stage & Operculum: ").bold = True
+    bp_t3.add_run("Newly emerged first permanent molars frequently present partially covered distal marginal ridges by a gingival operculum, compromising complete peripheral seal placement and mechanical retention.")
+
+    bp_t4 = doc.add_paragraph(style='List Bullet')
+    bp_t4.add_run("4. Masticatory Load Concentration: ").bold = True
+    bp_t4.add_run("Permanent first molars absorb the highest vertical and lateral chewing forces, subjecting molar sealants to greater shearing stress than premolars.")
 
     # Table 3: Tooth Type & Jaw Location
     add_custom_heading("Table 3. Comparison of sealant retention across Anatomical Factors: Tooth Type and Jaw Location (N = 118)", level=3)
@@ -276,16 +284,15 @@ def create_doctor_report():
     doc.add_paragraph().paragraph_format.space_after = Pt(4)
 
     # Insert Figure 1
-    import os
     if os.path.exists('figure1_retention_tooth_type.png'):
         p_fig1 = doc.add_paragraph()
         p_fig1.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        doc.add_picture('figure1_retention_tooth_type.png', width=Inches(5.6))
+        doc.add_picture('figure1_retention_tooth_type.png', width=Inches(5.4))
         doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
         p_cap1 = doc.add_paragraph()
         p_cap1.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p_cap1.paragraph_format.space_after = Pt(8)
-        r_cap1 = p_cap1.add_run("Figure 1. Retention of sealants in premolars and permanent molars after 3 months (p = 0.002).")
+        r_cap1 = p_cap1.add_run("Figure 1. Retention distribution of sealants in premolars and permanent molars after 3 months (p = 0.002).")
         r_cap1.bold = True
         r_cap1.font.size = Pt(9.5)
         r_cap1.font.name = "Calibri"
@@ -296,13 +303,13 @@ def create_doctor_report():
     
     p = doc.add_paragraph("Observed Data: Maxillary teeth exhibited 73.2% complete retention (n = 52/71) and 2.8% complete loss (n = 2/71), while mandibular teeth exhibited 70.2% complete retention (n = 33/47) and 6.4% complete loss (n = 3/47). Mean ranks were closely matched (58.58 for upper vs. 60.88 for lower).")
     
-    p = doc.add_paragraph("Clinical Interpretation for the Manuscript: These findings demonstrate that standardized quadrant isolation with cotton rolls and saliva ejectors provides equivalent moisture control in both arches, confirming that jaw position is not an inherent risk factor for sealant failure when clinical protocols are strictly adhered to.")
+    p = doc.add_paragraph("Clinical Interpretation: These findings demonstrate that standardized quadrant isolation with cotton rolls and saliva ejectors provides equivalent moisture control in both arches, confirming that arch location does not compromise clinical retention when standardized clinical isolation protocols are rigorously maintained.")
 
     # Insert Figure 2
     if os.path.exists('figure2_retention_jaw_location.png'):
         p_fig2 = doc.add_paragraph()
         p_fig2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        doc.add_picture('figure2_retention_jaw_location.png', width=Inches(5.6))
+        doc.add_picture('figure2_retention_jaw_location.png', width=Inches(5.4))
         doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
         p_cap2 = doc.add_paragraph()
         p_cap2.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -313,8 +320,8 @@ def create_doctor_report():
         r_cap2.font.name = "Calibri"
 
     # FINDING 3: Age & Gender
-    add_custom_heading("3.3 Finding 3: Influence of Patient Age and Gender Equivalence", level=2)
-    p = doc.add_paragraph("Statistical Result for Age: Sealant retention differed significantly between age groups (Mann-Whitney U = 1328.0, Z = -2.726, p = 0.006). Older children (> 10 years; 11–12 years) achieved 81.5% complete retention (n = 53/65) and 0.0% complete loss, whereas younger children (≤ 10 years; 8–10 years) achieved 60.4% complete retention (n = 32/53) and exhibited all 5 cases of complete sealant loss (9.4%).")
+    add_custom_heading("3.3 Finding 3: Demographic Influences — Age Significance and Gender Equivalence", level=2)
+    p = doc.add_paragraph("Statistical Result for Age: Sealant retention differed significantly between age groups (Mann-Whitney U = 1328.0, Z = -2.726, p = 0.006). Older children (> 10 years; 11–12 years) achieved 81.5% complete retention (n = 53/65) and 0.0% complete loss, whereas younger children (≤ 10 years; 8–10 years) achieved 60.4% complete retention (n = 32/53) and accounted for all 5 cases of complete sealant loss (9.4%).")
     
     p = doc.add_paragraph("Clinical & Behavioral Rationale for Age: Older children exhibit superior chairside behavioral cooperation, facilitating uninterrupted etching, washing, and drying. Furthermore, premolars and second molars in 11–12-year-olds have reached full clinical crown emergence, avoiding subgingival opercula and moisture pooling commonly encountered in recently erupted molars of younger children.")
 
@@ -339,110 +346,160 @@ def create_doctor_report():
     doc.add_paragraph().paragraph_format.space_after = Pt(8)
 
     # FINDING 4: Retention vs Caries
-    add_custom_heading("3.4 Finding 4: Significant Association Between Sealant Retention Integrity and 3-Month Caries Prevention", level=2)
-    p = doc.add_paragraph("Statistical Result: Cross-tabulation revealed a statistically significant association between sealant retention status and 3-month caries incidence (Pearson Chi-Square χ² = 118.00, df = 2, p < 0.0001; confirmed by Fisher-Freeman-Halton Exact Test, p < 0.0001).")
+    add_custom_heading("3.4 Finding 4: Association Between Sealant Retention Status and 3-Month Caries Incidence", level=2)
+    p = doc.add_paragraph("Statistical Result: Cross-tabulation revealed a statistically significant association between sealant retention status and 3-month caries incidence. Because several contingency cells contained zero counts and expected frequencies below 5, the Fisher-Freeman-Halton Exact Test was established as the primary statistical test (Exact p < 0.0001, exact probability = 5.75 × 10⁻⁹). Pearson's Chi-Square test was computed as secondary supporting evidence (χ² = 118.00, df = 2, asymptotic p < 0.0001).")
     
-    p = doc.add_paragraph("Observed Data: Teeth with completely retained sealants (Score 0, n = 85) and partially retained sealants (Score 1, n = 28) demonstrated a 100% caries-free rate (0.0% caries) during the 3-month follow-up period. Conversely, all 5 newly detected carious lesions occurred in teeth that experienced complete sealant loss (Score 2, n = 5).")
+    p = doc.add_paragraph("Observed Data: Teeth with completely retained sealants (Score 0, n = 85) and partially retained sealants (Score 1, n = 28) demonstrated a 100% caries-free rate (0.0% caries) during the 3-month follow-up period. Conversely, all 5 newly detected carious lesions occurred exclusively in teeth that experienced complete sealant loss (Score 2, n = 5).")
     
-    p = doc.add_paragraph("Clinical & Preventive Significance for the Manuscript: These findings strongly corroborate Simonsen's sealant doctrine. While this observational investigation does not measure bacterial plaque levels directly, intact and partially retained resin sealants serve as an effective micromechanical physical barrier preventing acidogenic bacterial stagnation and carbohydrate fermentation in vulnerable pits and fissures. Complete dislodgement re-exposes previously acid-conditioned enamel surfaces to active oral challenges.")
+    p = doc.add_paragraph("Clinical Interpretation & Observational Association: These findings demonstrate that sealant retention status was significantly associated with caries incidence at 3 months. Intact and partially retained resin sealants provided a clinical physical barrier over vulnerable fissures, whereas complete dislodgement re-exposed previously conditioned enamel to oral cariogenic factors. However, because this was a 3-month observational study without an untreated control group, these findings establish a strong clinical association rather than absolute causal prevention, as oral hygiene habits, dietary patterns, and salivary factors also contribute to caries development over time.")
 
     # Table 5: Retention vs Caries
     add_custom_heading("Table 5. Contingency table of Sealant Retention Status vs. 3-Month Caries Incidence (N = 118)", level=3)
     t5 = doc.add_table(rows=5, cols=6)
-    t5_headers = ["Retention Status (Simonsen's)", "Caries-Free (Sound)\nN (%)", "Caries Incidence (Decayed)\nN (%)", "Total Evaluated", "Chi-Square (χ²)", "p-value"]
+    t5_headers = ["Retention Status (Simonsen's)", "Caries-Free (Sound)\nN (%)", "Caries Incidence (Decayed)\nN (%)", "Total Evaluated", "Primary Exact Test", "Secondary Asymptotic"]
     for j, h in enumerate(t5_headers):
         t5.rows[0].cells[j].paragraphs[0].text = h
     t5_data = [
-        ["Score 0 (Completely Retained)", "85 (100.0%)", "0 (0.0%)", "85 (100.0%)", "χ² = 118.00\ndf = 2", "p < 0.0001 ***\n(Extremely Significant)"],
-        ["Score 1 (Partially Retained)", "28 (100.0%)", "0 (0.0%)", "28 (100.0%)", "", ""],
-        ["Score 2 (Completely Missing)", "0 (0.0%)", "5 (100.0%)", "5 (100.0%)", "", ""],
-        ["Total Evaluated", "113 (95.8%)", "5 (4.2%)", "118 (100.0%)", "", ""]
+        ["Score 0 (Completely Retained)", "85 (100.0%)", "0 (0.0%)", "85 (100.0%)", "Fisher-Freeman-Halton", "Pearson χ² = 118.00"],
+        ["Score 1 (Partially Retained)", "28 (100.0%)", "0 (0.0%)", "28 (100.0%)", "Exact Test:", "df = 2"],
+        ["Score 2 (Completely Missing)", "0 (0.0%)", "5 (100.0%)", "5 (100.0%)", "p < 0.0001 ***", "p < 0.0001"],
+        ["Total Evaluated", "113 (95.8%)", "5 (4.2%)", "118 (100.0%)", "(Exact p = 5.75 × 10⁻⁹)", ""]
     ]
     for i, row_data in enumerate(t5_data):
         for j, val in enumerate(row_data):
             t5.rows[i+1].cells[j].paragraphs[0].text = val
-    style_academic_table(t5, [2.0, 1.4, 1.4, 1.0, 1.0, 1.2], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
-    doc.add_paragraph().paragraph_format.space_after = Pt(8)
+    style_academic_table(t5, [2.0, 1.4, 1.4, 1.0, 1.3, 1.2], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
+    
+    p_t5_note = doc.add_paragraph("Note: *** Highly statistically significant. Fisher-Freeman-Halton exact test was utilized as the primary test due to sparse cell frequencies (< 5) and structural zeros. Pearson Chi-Square is reported as supporting secondary analysis.")
+    p_t5_note.runs[0].font.size = Pt(8.5)
+    p_t5_note.runs[0].font.italic = True
+    p_t5_note.paragraph_format.space_after = Pt(8)
 
     # FINDING 5: Baseline DMFT Stratification
     add_custom_heading("3.5 Finding 5: Baseline DMFT/DMFS Indices Stratified by Retention Outcome", level=2)
-    p = doc.add_paragraph("Statistical Result: Comparison of baseline DMFT and DMFS across the three retention outcomes (Score 0: DMFT = 2.24 ± 1.19, DMFS = 4.52 ± 2.33; Score 1: DMFT = 2.39 ± 1.20, DMFS = 4.89 ± 2.20; Score 2: DMFT = 2.20 ± 1.64, DMFS = 4.20 ± 3.19) showed no statistically significant differences (Kruskal-Wallis / ANOVA p > 0.05).")
+    p = doc.add_paragraph("Statistical Result: Due to the count/ordinal nature of caries indices and the small sample size in the complete loss group (Score 2, n = 5), the non-parametric Kruskal-Wallis H-test was conducted to compare baseline DMFT and DMFS across retention groups. No statistically significant differences were observed across the three retention outcomes (Baseline DMFT: H = 0.566, df = 2, p = 0.753; Baseline DMFS: H = 0.601, df = 2, p = 0.740). Supplementary one-way ANOVA yielded identical non-significant conclusions (DMFT: F = 0.187, p = 0.830; DMFS: F = 0.345, p = 0.709).")
     
-    p = doc.add_paragraph("Clinical Deduction: This confirms that a patient's pre-existing baseline caries severity did not confound the technical retention of the sealant. Retention failure was governed by anatomical morphology and moisture isolation rather than individual caries susceptibility.")
+    p = doc.add_paragraph("Clinical Deduction: This confirms that a patient's pre-existing baseline caries severity did not confound the technical retention of the sealant. Retention failure was governed by anatomical morphology and moisture isolation rather than individual baseline caries susceptibility.")
 
     # Table 6: Baseline DMFT Stratification
     add_custom_heading("Table 6. Baseline DMFT and DMFS indices across 3-Month Retention Groups", level=3)
-    t6 = doc.add_table(rows=4, cols=5)
-    t6_headers = ["Retention Group (Simonsen's)", "Sample Size (Teeth)", "Baseline DMFT (Mean ± SD)", "Baseline DMFS (Mean ± SD)", "ANOVA / Kruskal-Wallis"]
+    t6 = doc.add_table(rows=4, cols=6)
+    t6_headers = ["Retention Group (Simonsen's)", "Sample Size (Teeth)", "Baseline DMFT (Mean ± SD)", "Baseline DMFS (Mean ± SD)", "Kruskal-Wallis Test (Primary)", "ANOVA (Supporting)"]
     for j, h in enumerate(t6_headers):
         t6.rows[0].cells[j].paragraphs[0].text = h
     t6_data = [
-        ["Score 0 (Complete Retention)", "85", "2.24 ± 1.19", "4.52 ± 2.33", "p > 0.05 (NS)\n(No Baseline Confounding)"],
-        ["Score 1 (Partial Retention)", "28", "2.39 ± 1.20", "4.89 ± 2.20", ""],
-        ["Score 2 (Complete Loss)", "5", "2.20 ± 1.64", "4.20 ± 3.19", ""]
+        ["Score 0 (Complete Retention)", "85", "2.24 ± 1.19", "4.52 ± 2.33", "DMFT: H = 0.566, p = 0.753", "DMFT: F = 0.187, p = 0.830"],
+        ["Score 1 (Partial Retention)", "28", "2.39 ± 1.20", "4.89 ± 2.20", "DMFS: H = 0.601, p = 0.740", "DMFS: F = 0.345, p = 0.709"],
+        ["Score 2 (Complete Loss)", "5", "2.20 ± 1.64", "4.20 ± 3.19", "(df = 2, Non-Significant)", "(df = 2, 115, NS)"]
     ]
     for i, row_data in enumerate(t6_data):
         for j, val in enumerate(row_data):
             t6.rows[i+1].cells[j].paragraphs[0].text = val
-    style_academic_table(t6, [2.0, 0.8, 1.5, 1.5, 1.4], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
-    doc.add_paragraph().paragraph_format.space_after = Pt(12)
+    style_academic_table(t6, [1.8, 0.7, 1.4, 1.4, 1.3, 1.3], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
+    
+    p_t6_note = doc.add_paragraph("Note: Non-parametric Kruskal-Wallis H-test is reported as primary due to skewed distribution and small subgroup size in Score 2 (n = 5). Differences were non-significant (p > 0.05), confirming absence of baseline confounding.")
+    p_t6_note.runs[0].font.size = Pt(8.5)
+    p_t6_note.runs[0].font.italic = True
+    p_t6_note.paragraph_format.space_after = Pt(10)
+
+    # -------------------------------------------------------------
+    # 3.6 SENSITIVITY ANALYSIS: CLUSTERING WITHIN PATIENTS (GEE)
+    # -------------------------------------------------------------
+    add_custom_heading("3.6 Methodological Sensitivity Analysis: Accounting for Clustered Teeth within Patients", level=2)
+    p = doc.add_paragraph("Methodological Context: In dental clinical trials, evaluating multiple teeth per subject (nested/clustered design) can violate the assumption of observation independence if standard unadjusted tooth-level tests are used alone. In this cohort, 118 teeth were evaluated across 40 patients (cluster size range: 1–8 teeth, mean: 2.95 teeth/patient). To verify whether clustering within the child influenced statistical inferences, a sensitivity analysis was performed using Generalized Estimating Equations (GEE) with an exchangeable correlation structure and robust Huber-White standard errors.")
+    
+    p = doc.add_paragraph("Sensitivity Findings: The GEE modeling demonstrated that accounting for intra-subject correlation fully corroborated all primary findings:")
+    
+    bp_g1 = doc.add_paragraph(style='List Bullet')
+    bp_g1.add_run("Tooth Type: ").bold = True
+    bp_g1.add_run("Molars remained significantly associated with reduced complete retention compared to premolars (GEE robust z = -2.828, p = 0.005; Adjusted Odds Ratio = 0.322, 95% CI: 0.147–0.706), confirming the unadjusted Mann-Whitney U test (p = 0.002).")
+
+    bp_g2 = doc.add_paragraph(style='List Bullet')
+    bp_g2.add_run("Age Subgroup: ").bold = True
+    bp_g2.add_run("Older children (> 10 years) maintained significantly higher complete retention compared to younger children (GEE robust z = 3.626, p = 0.0003; Adjusted Odds Ratio = 3.126, 95% CI: 1.688–5.790), confirming the unadjusted test (p = 0.006).")
+
+    bp_g3 = doc.add_paragraph(style='List Bullet')
+    bp_g3.add_run("Jaw Location: ").bold = True
+    bp_g3.add_run("Upper vs. lower arch showed no significant effect under clustering (GEE robust z = -0.258, p = 0.797), fully agreeing with the unadjusted finding (p = 0.648).")
+
+    # Table 7: GEE Sensitivity Model
+    add_custom_heading("Table 7. Clustered sensitivity analysis using Generalized Estimating Equations (GEE) adjusting for 40 patient clusters (N = 118 teeth)", level=3)
+    t7 = doc.add_table(rows=4, cols=6)
+    t7_headers = ["Independent Predictor", "Unadjusted Tooth-Level p-value", "GEE Robust Coef (SE)", "Robust z-statistic", "Cluster-Adjusted p-value", "Adjusted Odds Ratio (95% CI)"]
+    for j, h in enumerate(t7_headers):
+        t7.rows[0].cells[j].paragraphs[0].text = h
+    t7_data = [
+        ["Tooth Type (Molars vs. Premolars)", "p = 0.002 **", "-1.133 (0.401)", "-2.828", "p = 0.005 **", "0.322 (0.147 – 0.706)"],
+        ["Age Group (> 10 vs. ≤ 10 Years)", "p = 0.006 **", "+1.140 (0.314)", "+3.626", "p = 0.0003 ***", "3.126 (1.688 – 5.790)"],
+        ["Jaw Location (Upper vs. Lower Arch)", "p = 0.648 (NS)", "-0.131 (0.508)", "-0.258", "p = 0.797 (NS)", "0.877 (0.324 – 2.373)"]
+    ]
+    for i, row_data in enumerate(t7_data):
+        for j, val in enumerate(row_data):
+            t7.rows[i+1].cells[j].paragraphs[0].text = val
+    style_academic_table(t7, [1.8, 1.2, 1.2, 1.0, 1.1, 1.5], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
+    
+    p_t7_note = doc.add_paragraph("Note: GEE models specified Binomial family, logit link, exchangeable correlation structure across 40 patient clusters (mean cluster size = 2.95 teeth). All statistical conclusions remain completely robust.")
+    p_t7_note.runs[0].font.size = Pt(8.5)
+    p_t7_note.runs[0].font.italic = True
+    p_t7_note.paragraph_format.space_after = Pt(10)
 
     # -------------------------------------------------------------
     # 4. KEY SYNTHESIS POINTS FOR MANUSCRIPT DISCUSSION
     # -------------------------------------------------------------
     add_custom_heading("4. Key Synthesis Points for the Discussion Section of the Manuscript", level=1)
     
-    p = doc.add_paragraph("The following bullet points summarize the core conclusions that can be directly adapted into the Discussion section of the research paper:")
+    p = doc.add_paragraph("The following synthesis points provide refined academic text directly adaptable into the Discussion section of the manuscript:")
     
     bp_s1 = doc.add_paragraph(style='List Bullet')
-    bp_s1.add_run("1. High Short-Term Success: ").bold = True
-    bp_s1.add_run("A 95.8% cumulative retention rate (72.0% complete + 23.7% partial) confirms the high reliability of light-cured resin-based sealants placed in pediatric clinics.")
+    bp_s1.add_run("1. Satisfactory Short-Term Clinical Retention: ").bold = True
+    bp_s1.add_run("Complete retention was observed in 72.0% of teeth, and satisfactory retention (Score 0 + Score 1) reached 95.8% at 3 months, reflecting high initial clinical efficacy of light-cured resin sealants in this pediatric cohort.")
 
     bp_s2 = doc.add_paragraph(style='List Bullet')
-    bp_s2.add_run("2. Superiority of Premolars: ").bold = True
-    bp_s2.add_run("Premolars showed significantly higher retention than molars (80.5% vs. 56.1%, p = 0.002), demonstrating that shallower occlusal anatomy promotes superior micromechanical resin penetration.")
+    bp_s2.add_run("2. Morphological Advantage of Premolars: ").bold = True
+    bp_s2.add_run("Premolars showed significantly superior complete retention compared to molars (80.5% vs. 56.1%, p = 0.002; GEE cluster-adjusted p = 0.005). The shallower, wider groove morphology of premolars permits superior acid-etch conditioning and uniform resin flow compared to deep, constricted molar fissures.")
 
     bp_s3 = doc.add_paragraph(style='List Bullet')
-    bp_s3.add_run("3. Enhanced Vigilance for Molars: ").bold = True
-    bp_s3.add_run("Because 100% of complete sealant dislodgements occurred in permanent molars (12.2% failure rate), clinical protocols should emphasize enhanced moisture control (e.g., rubber dam isolation or four-handed dentistry) during molar sealant application.")
+    bp_s3.add_run("3. Enhanced Vigilance in Molar Application: ").bold = True
+    bp_s3.add_run("Because all 5 complete sealant failures occurred exclusively in permanent molars (12.2% loss rate), clinicians must prioritize strict moisture control and consider dental isolation adjuncts, particularly when operating on partially erupted or distal molar surfaces.")
 
     bp_s4 = doc.add_paragraph(style='List Bullet')
-    bp_s4.add_run("4. Age-Related Compliance Factor: ").bold = True
-    bp_s4.add_run("The significant improvement in retention in children > 10 years (81.5% vs. 60.4%, p = 0.006) underlines the dual importance of patient behavioral cooperation and full clinical crown eruption.")
+    bp_s4.add_run("4. Age-Dependent Compliance & Crown Emergence: ").bold = True
+    bp_s4.add_run("Children older than 10 years achieved significantly higher retention than younger children (81.5% vs. 60.4%, p = 0.006; GEE cluster-adjusted p = 0.0003). This is attributed to enhanced patient cooperation and complete clinical crown emergence free of overlying gingival tissue.")
 
     bp_s5 = doc.add_paragraph(style='List Bullet')
-    bp_s5.add_run("5. Conclusive Preventive Barrier: ").bold = True
-    bp_s5.add_run("The 100% caries-free status in retained sealants versus 100% caries occurrence in completely lost sealants (p < 0.0001) confirms that maintaining sealant integrity is strongly associated with occlusal caries prevention.")
+    bp_s5.add_run("5. Retention Status and Caries Association: ").bold = True
+    bp_s5.add_run("Sealant retention was significantly associated with 3-month caries incidence (Fisher-Freeman-Halton exact test p < 0.0001). Intact and partially retained sealants provided a continuous physical barrier (100% caries-free), whereas complete dislodgement was associated with all newly observed carious lesions.")
 
     # 5. STRENGTHS AND METHODOLOGICAL LIMITATIONS
     add_custom_heading("5. Strengths and Methodological Limitations of the Study", level=1)
     
     add_custom_heading("5.1 Strengths", level=2)
     bp_st1 = doc.add_paragraph(style='List Bullet')
-    bp_st1.add_run("Standardized Evaluation: ").bold = True
-    bp_st1.add_run("Use of universally recognized Simonsen's retention criteria combined with calibrated clinical evaluations under pediatric specialist supervision.")
+    bp_st1.add_run("Standardized Clinical Scoring: ").bold = True
+    bp_st1.add_run("Application of Simonsen's internationally recognized criteria with rigorous baseline DMFT/DMFS recording.")
     bp_st2 = doc.add_paragraph(style='List Bullet')
-    bp_st2.add_run("Homogeneous Sample: ").bold = True
-    bp_st2.add_run("Strict inclusion of sound permanent dentition with comprehensive baseline DMFT/DMFS recording.")
+    bp_st2.add_run("Methodological Rigor: ").bold = True
+    bp_st2.add_run("Utilization of exact non-parametric tests (Fisher-Freeman-Halton, Kruskal-Wallis) combined with clustered sensitivity modeling (GEE) to verify statistical robustness.")
 
-    add_custom_heading("5.2 Methodological Considerations and Limitations", level=2)
+    add_custom_heading("5.2 Methodological Considerations & Limitations", level=2)
     bp_lim1 = doc.add_paragraph(style='List Bullet')
-    bp_lim1.add_run("Nested Data Structure (Clustering Effect): ").bold = True
-    bp_lim1.add_run("In accordance with established dental research protocols (Al-Sultani et al., 2020), each sealed tooth was evaluated as an independent analytical unit. However, multiple teeth originate within individual patients (mean: 2.95 teeth/child). Future extended multi-center investigations may incorporate generalized estimating equations (GEE) or multilevel mixed-effects models to further model potential intra-subject covariance.")
+    bp_lim1.add_run("Tooth-Level Clustering: ").bold = True
+    bp_lim1.add_run("Primary analyses were performed at the tooth level (N = 118) in consistency with the baseline study design. Because multiple teeth were treated per participant (mean: 2.95 teeth/child), potential intra-subject correlation was formally tested using GEE sensitivity analysis, which confirmed all primary conclusions.")
     
     bp_lim2 = doc.add_paragraph(style='List Bullet')
-    bp_lim2.add_run("Follow-Up Horizon: ").bold = True
-    bp_lim2.add_run("The 3-month recall provides crucial insights into early technical failure; however, 6- and 12-month re-evaluations are recommended to assess longitudinal longevity.")
+    bp_lim2.add_run("Follow-Up Duration and Confounders: ").bold = True
+    bp_lim2.add_run("The 3-month evaluation window reflects early technical adhesion and short-term clinical outcomes. Longer follow-up (6, 12, and 24 months) and assessment of dietary and salivary covariates are recommended to evaluate long-term preventive performance.")
     
     bp_lim3 = doc.add_paragraph(style='List Bullet')
-    bp_lim3.add_run("Field Isolation Protocol: ").bold = True
-    bp_lim3.add_run("Standard cotton roll isolation with saliva ejectors was utilized; investigating four-handed dentistry or rubber dam isolation could provide comparative benchmarks in younger cohorts.")
+    bp_lim3.add_run("Absence of Untreated Control Group: ").bold = True
+    bp_lim3.add_run("Due to ethical considerations regarding withholding standard preventive care in caries-active children, an unsealed control group was not included; thus, the relationship between sealant retention and caries incidence is interpreted as a strong clinical association.")
 
-    # Save
-    out_path = 'C:/Users/w/Desktop/احصاء بحث تخرج/Scopus_Statistical_Report_Final.docx'
-    doc.save(out_path)
+    # Save documents
+    out_path1 = 'C:/Users/w/Desktop/احصاء بحث تخرج/Scopus_Statistical_Report_Final.docx'
+    doc.save(out_path1)
     try:
-        doc.save('C:/Users/w/Desktop/احصاء بحث تخرج/Statistical_Findings_and_Clinical_Interpretations_Report.docx')
+        out_path2 = 'C:/Users/w/Desktop/احصاء بحث تخرج/Statistical_Findings_and_Clinical_Interpretations_Report.docx'
+        doc.save(out_path2)
     except PermissionError:
         pass
     print('Doctor report successfully created.')

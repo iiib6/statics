@@ -494,7 +494,15 @@ def create_statistical_guide():
 
     add_custom_heading("Template 4: Reporting Contingency Association (Caries vs. Sealant)", level=3)
     p4 = doc.add_paragraph(style='List Bullet')
-    p4.add_run('"A Pearson Chi-square test of independence demonstrated a highly significant association between sealant retention and 3-month caries incidence, χ²(2, N = 118) = 118.00, p < 0.0001. All teeth with completely (Score 0) or partially (Score 1) retained sealants remained 100% caries-free, whereas 100% of newly developed carious lesions occurred exclusively in teeth suffering complete sealant loss."').italic = True
+    p4.add_run('"The Fisher-Freeman-Halton exact test demonstrated a highly statistically significant association between sealant retention status and 3-month caries incidence (Exact p < 0.0001, exact probability = 5.75 × 10⁻⁹; supported by Pearson χ² = 118.00, df = 2, p < 0.0001). While all teeth with complete (Score 0) or partial (Score 1) retention remained 100% caries-free, newly detected carious lesions occurred exclusively in teeth with complete sealant loss (Score 2)."').italic = True
+
+    add_custom_heading("Template 5: Reporting Baseline DMFT/DMFS Stratification", level=3)
+    p5 = doc.add_paragraph(style='List Bullet')
+    p5.add_run('"A non-parametric Kruskal-Wallis test revealed no statistically significant differences in baseline DMFT (H = 0.566, df = 2, p = 0.753) or DMFS (H = 0.601, df = 2, p = 0.740) across the three 3-month sealant retention categories (Score 0: DMFT 2.24 ± 1.19; Score 1: 2.39 ± 1.20; Score 2: 2.20 ± 1.64), confirming that pre-existing baseline caries severity did not confound clinical retention."').italic = True
+
+    add_custom_heading("Template 6: Reporting Clustered Sensitivity Analysis (GEE)", level=3)
+    p6 = doc.add_paragraph(style='List Bullet')
+    p6.add_run('"To account for potential intra-subject correlation resulting from evaluating multiple teeth per child (mean: 2.95 teeth across 40 patients), a clustered sensitivity analysis was conducted using Generalized Estimating Equations (GEE) with an exchangeable correlation structure and robust standard errors. The analysis confirmed that molars had significantly lower odds of complete retention than premolars (GEE robust z = -2.828, p = 0.005; Adjusted OR = 0.322, 95% CI: 0.147–0.706) and older age remained significantly associated with complete retention (GEE robust z = 3.626, p = 0.0003; Adjusted OR = 3.126, 95% CI: 1.688–5.790), demonstrating that intra-patient clustering did not alter the primary conclusions."').italic = True
 
     # Save document
     out_path = 'C:/Users/w/Desktop/احصاء بحث تخرج/Statistical_Analysis_and_Interpretation_Guide.docx'

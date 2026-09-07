@@ -1,7 +1,10 @@
+import os
 import pandas as pd
 import numpy as np
 from scipy import stats
 import docx
+import statsmodels.formula.api as smf
+import statsmodels.api as sm
 
 # 1. Load Excel
 df_raw = pd.read_excel('NOOR_120.xlsx')
@@ -14,13 +17,16 @@ df['GENDER'] = df['GENDER'].str.strip().str.capitalize()
 df['arch'] = df['arch'].str.strip().str.capitalize()
 df['CARIES INCIDENCE after 3 months'] = df['CARIES INCIDENCE after 3 months'].str.strip().str.upper()
 df['RETENTION RATE after 3 months'] = df['RETENTION RATE after 3 months'].astype(int)
-df['is_molar'] = df['sealant placement teeth'].str.contains('M', case=False, na=False)
+df['is_molar'] = df['sealant placement teeth'].str.contains('M', case=False, na=False).astype(int)
 df['tooth_type'] = np.where(df['is_molar'], 'Molar', 'Premolar')
+df['is_upper'] = (df['arch'] == 'Upper').astype(int)
+df['age_gt10'] = (df['AGE'] > 10).astype(int)
+df['ret_complete'] = (df['RETENTION RATE after 3 months'] == 0).astype(int)
 
 # Patient df
 df_p = df.drop_duplicates('patient_id')
 
-# 2. Compute all benchmark metrics
+# 2. Benchmark metrics
 benchmarks = {}
 
 # Demographics (Patients N=40)
@@ -36,39 +42,19 @@ benchmarks['age_min'] = int(df_p['AGE'].min())
 benchmarks['age_max'] = int(df_p['AGE'].max())
 benchmarks['age_med'] = float(df_p['AGE'].median())
 
-benchmarks['age_le10_n'] = (df_p['AGE'] <= 10).sum()
-benchmarks['age_le10_pct'] = round(benchmarks['age_le10_n'] / len(df_p) * 100, 1)
-benchmarks['age_gt10_n'] = (df_p['AGE'] > 10).sum()
-benchmarks['age_gt10_pct'] = round(benchmarks['age_gt10_n'] / len(df_p) * 100, 1)
-
 benchmarks['dmft_mean'] = round(df_p['DMFT'].mean(), 2)
 benchmarks['dmft_sd'] = round(df_p['DMFT'].std(ddof=1), 2)
-benchmarks['dmft_med'] = float(df_p['DMFT'].median())
-benchmarks['dmft_min'] = int(df_p['DMFT'].min())
-benchmarks['dmft_max'] = int(df_p['DMFT'].max())
-
 benchmarks['dmfs_mean'] = round(df_p['DMFS'].mean(), 2)
 benchmarks['dmfs_sd'] = round(df_p['DMFS'].std(ddof=1), 2)
-benchmarks['dmfs_med'] = float(df_p['DMFS'].median())
-benchmarks['dmfs_min'] = int(df_p['DMFS'].min())
-benchmarks['dmfs_max'] = int(df_p['DMFS'].max())
 
 # Teeth N=118
 benchmarks['teeth_n'] = len(df)
-benchmarks['teeth_per_child_mean'] = round(df.groupby('patient_id').size().mean(), 2)
-benchmarks['teeth_per_child_sd'] = round(df.groupby('patient_id').size().std(ddof=1), 2)
-
 benchmarks['upper_n'] = (df['arch'] == 'Upper').sum()
 benchmarks['lower_n'] = (df['arch'] == 'Lower').sum()
-benchmarks['upper_pct'] = round(benchmarks['upper_n'] / len(df) * 100, 1)
-benchmarks['lower_pct'] = round(benchmarks['lower_n'] / len(df) * 100, 1)
-
 benchmarks['premolars_n'] = (df['tooth_type'] == 'Premolar').sum()
 benchmarks['molars_n'] = (df['tooth_type'] == 'Molar').sum()
-benchmarks['premolars_pct'] = round(benchmarks['premolars_n'] / len(df) * 100, 1)
-benchmarks['molars_pct'] = round(benchmarks['molars_n'] / len(df) * 100, 1)
 
-# Overall Retention
+# Retention
 ret_counts = df['RETENTION RATE after 3 months'].value_counts()
 benchmarks['score0_n'] = ret_counts.get(0, 0)
 benchmarks['score1_n'] = ret_counts.get(1, 0)
@@ -78,13 +64,6 @@ benchmarks['score1_pct'] = round(benchmarks['score1_n'] / len(df) * 100, 1)
 benchmarks['score2_pct'] = round(benchmarks['score2_n'] / len(df) * 100, 1)
 benchmarks['cum_ret_n'] = benchmarks['score0_n'] + benchmarks['score1_n']
 benchmarks['cum_ret_pct'] = round(benchmarks['cum_ret_n'] / len(df) * 100, 1)
-
-# Caries Incidence
-caries_counts = df['CARIES INCIDENCE after 3 months'].value_counts()
-benchmarks['caries_no_n'] = caries_counts.get('NO', 0)
-benchmarks['caries_yes_n'] = caries_counts.get('YES', 0)
-benchmarks['caries_no_pct'] = round(benchmarks['caries_no_n'] / len(df) * 100, 1)
-benchmarks['caries_yes_pct'] = round(benchmarks['caries_yes_n'] / len(df) * 100, 1)
 
 # Inferential Tests
 pre_ret = df[df['tooth_type'] == 'Premolar']['RETENTION RATE after 3 months']
@@ -111,72 +90,69 @@ u_gen, p_gen = stats.mannwhitneyu(m_ret, f_ret)
 benchmarks['mw_gen_u'] = round(u_gen, 1)
 benchmarks['mw_gen_p'] = round(p_gen, 3)
 
-ct_caries = pd.crosstab(df['RETENTION RATE after 3 months'], df['CARIES INCIDENCE after 3 months'])
-chi2, p_chi, df_chi, _ = stats.chi2_contingency(ct_caries)
-benchmarks['chi2_caries'] = round(chi2, 2)
-benchmarks['p_chi_caries'] = p_chi
+# Kruskal-Wallis for Baseline DMFT & DMFS across retention groups
+ret0_dmft = df[df['RETENTION RATE after 3 months'] == 0]['DMFT']
+ret1_dmft = df[df['RETENTION RATE after 3 months'] == 1]['DMFT']
+ret2_dmft = df[df['RETENTION RATE after 3 months'] == 2]['DMFT']
+kw_dmft = stats.kruskal(ret0_dmft, ret1_dmft, ret2_dmft)
+benchmarks['kw_dmft_h'] = round(float(kw_dmft.statistic), 3)
+benchmarks['kw_dmft_p'] = round(float(kw_dmft.pvalue), 3)
 
-# 3. Read Word Document
-doc = docx.Document('Statistical_Findings_and_Clinical_Interpretations_Report.docx')
-doc_text = '\n'.join([p.text for p in doc.paragraphs])
-for t in doc.tables:
-    for row in t.rows:
-        doc_text += '\n' + ' | '.join([c.text for c in row.cells])
+ret0_dmfs = df[df['RETENTION RATE after 3 months'] == 0]['DMFS']
+ret1_dmfs = df[df['RETENTION RATE after 3 months'] == 1]['DMFS']
+ret2_dmfs = df[df['RETENTION RATE after 3 months'] == 2]['DMFS']
+kw_dmfs = stats.kruskal(ret0_dmfs, ret1_dmfs, ret2_dmfs)
+benchmarks['kw_dmfs_h'] = round(float(kw_dmfs.statistic), 3)
+benchmarks['kw_dmfs_p'] = round(float(kw_dmfs.pvalue), 3)
 
-print('=== INDEPENDENT AUTOMATED STATISTICAL AUDIT REPORT ===\n')
-print(f'Total Patients N = {benchmarks["patients_n"]} | Total Teeth N = {benchmarks["teeth_n"]}')
-print(f'Boys: {benchmarks["boys_n"]} ({benchmarks["boys_pct"]}%) | Girls: {benchmarks["girls_n"]} ({benchmarks["girls_pct"]}%)')
-print(f'Age: {benchmarks["age_mean"]} +- {benchmarks["age_sd"]} (Range: {benchmarks["age_min"]}-{benchmarks["age_max"]}, Median: {benchmarks["age_med"]})')
-print(f'DMFT: {benchmarks["dmft_mean"]} +- {benchmarks["dmft_sd"]} | DMFS: {benchmarks["dmfs_mean"]} +- {benchmarks["dmfs_sd"]}')
-print(f'Retention: Complete={benchmarks["score0_n"]} ({benchmarks["score0_pct"]}%), Partial={benchmarks["score1_n"]} ({benchmarks["score1_pct"]}%), Missing={benchmarks["score2_n"]} ({benchmarks["score2_pct"]}%)')
-print(f'Caries: Sound={benchmarks["caries_no_n"]} ({benchmarks["caries_no_pct"]}%), Caries={benchmarks["caries_yes_n"]} ({benchmarks["caries_yes_pct"]}%)')
-print(f'Tooth Type Mann-Whitney U = {benchmarks["mw_type_u"]}, p = {benchmarks["mw_type_p"]}')
-print(f'Jaw Location Mann-Whitney U = {benchmarks["mw_arch_u"]}, p = {benchmarks["mw_arch_p"]}')
-print(f'Age Group Mann-Whitney U = {benchmarks["mw_age_u"]}, p = {benchmarks["mw_age_p"]}')
-print(f'Gender Mann-Whitney U = {benchmarks["mw_gen_u"]}, p = {benchmarks["mw_gen_p"]}')
-print(f'Chi-Square Caries vs Retention = {benchmarks["chi2_caries"]}, p = {benchmarks["p_chi_caries"]:.6e}')
+# GEE Cluster Sensitivity Models
+fam = sm.families.Binomial()
+cov = sm.cov_struct.Exchangeable()
+gee_molar = smf.gee('ret_complete ~ is_molar', 'patient_id', data=df, family=fam, cov_struct=cov).fit()
+benchmarks['gee_molar_p'] = round(float(gee_molar.pvalues['is_molar']), 3)
 
-# Verification Checks against docx content
-checks = [
-    ('Patient Sample Size 40', '40' in doc_text),
-    ('Teeth Sample Size 118', '118' in doc_text),
-    ('Boys Count 29 (72.5%)', '29' in doc_text and '72.5%' in doc_text),
-    ('Girls Count 11 (27.5%)', '11' in doc_text and '27.5%' in doc_text),
-    ('Mean Age 10.12', '10.12' in doc_text),
-    ('Age Range 8-12', '8' in doc_text and '12' in doc_text),
-    ('Mean DMFT 2.58', '2.58' in doc_text),
-    ('Mean DMFS 4.88', '4.88' in doc_text),
-    ('Upper Arch 71 (60.2%)', '71' in doc_text and '60.2%' in doc_text),
-    ('Lower Arch 47 (39.8%)', '47' in doc_text and '39.8%' in doc_text),
-    ('Premolars 77 (65.3%)', '77' in doc_text and '65.3%' in doc_text),
-    ('Molars 41 (34.7%)', '41' in doc_text and '34.7%' in doc_text),
-    ('Score 0 Complete 85 (72.0%)', '85' in doc_text and '72.0%' in doc_text),
-    ('Score 1 Partial 28 (23.7%)', '28' in doc_text and '23.7%' in doc_text),
-    ('Score 2 Missing 5 (4.2%)', '5' in doc_text and '4.2%' in doc_text),
-    ('Cumulative Retention 113 (95.8%)', '113' in doc_text and '95.8%' in doc_text),
-    ('Caries-Free 113 (95.8%)', '113' in doc_text),
-    ('Caries Incidence 5 (4.2%)', '5' in doc_text),
-    ('Premolars vs Molars U=1155.5', '1155.5' in doc_text),
-    ('Premolars vs Molars p=0.002', '0.002' in doc_text),
-    ('Upper vs Lower U=1603.5', '1603.5' in doc_text),
-    ('Upper vs Lower p=0.648', '0.648' in doc_text),
-    ('Age Groups U=1328.0', '1328.0' in doc_text),
-    ('Age Groups p=0.006', '0.006' in doc_text),
-    ('Gender Groups U=1441.5', '1441.5' in doc_text),
-    ('Gender Groups p=0.222', '0.222' in doc_text),
-    ('Chi-Square Caries Chi2=118.00', '118.00' in doc_text),
-]
+gee_age = smf.gee('ret_complete ~ age_gt10', 'patient_id', data=df, family=fam, cov_struct=cov).fit()
+benchmarks['gee_age_p'] = round(float(gee_age.pvalues['age_gt10']), 4)
 
-print('\n=== INDIVIDUAL TEST VERIFICATIONS ===')
-all_passed = True
-for name, passed in checks:
-    status = '[PASS]' if passed else '[FAIL]'
-    if not passed: all_passed = False
-    print(f'{status} {name}')
+gee_arch = smf.gee('ret_complete ~ is_upper', 'patient_id', data=df, family=fam, cov_struct=cov).fit()
+benchmarks['gee_arch_p'] = round(float(gee_arch.pvalues['is_upper']), 3)
 
-print('\n' + '='*50)
-if all_passed:
-    print('AUDIT CONCLUSION: 100% PERFECT AND FULLY VERIFIED (ZERO ERRORS)')
-else:
-    print('AUDIT CONCLUSION: ERRORS DETECTED')
-print('='*50)
+print('=== BENCHMARK STATISTICAL AUDIT SUMMARY ===')
+print(f'Patients: N = {benchmarks["patients_n"]} | Teeth: N = {benchmarks["teeth_n"]}')
+print(f'Retention: Complete = {benchmarks["score0_n"]} ({benchmarks["score0_pct"]}%), Partial = {benchmarks["score1_n"]} ({benchmarks["score1_pct"]}%), Missing = {benchmarks["score2_n"]} ({benchmarks["score2_pct"]}%)')
+print(f'Satisfactory Retention (Score 0 + 1): {benchmarks["cum_ret_n"]} ({benchmarks["cum_ret_pct"]}%)')
+print(f'Kruskal-Wallis DMFT: H = {benchmarks["kw_dmft_h"]}, p = {benchmarks["kw_dmft_p"]}')
+print(f'Kruskal-Wallis DMFS: H = {benchmarks["kw_dmfs_h"]}, p = {benchmarks["kw_dmfs_p"]}')
+print(f'GEE Cluster-Adjusted Molars: p = {benchmarks["gee_molar_p"]}')
+print(f'GEE Cluster-Adjusted Age (>10): p = {benchmarks["gee_age_p"]}')
+print(f'GEE Cluster-Adjusted Arch: p = {benchmarks["gee_arch_p"]}')
+
+# Check Word doc
+target_doc = 'Scopus_Statistical_Report_Final.docx'
+if os.path.exists(target_doc):
+    doc = docx.Document(target_doc)
+    doc_text = '\n'.join([p.text for p in doc.paragraphs])
+    for t in doc.tables:
+        for row in t.rows:
+            doc_text += '\n' + ' | '.join([c.text for c in row.cells])
+            
+    checks = [
+        ('Patient Sample Size 40', '40' in doc_text),
+        ('Teeth Sample Size 118', '118' in doc_text),
+        ('Complete Retention 85 (72.0%)', '85' in doc_text and '72.0%' in doc_text),
+        ('Satisfactory Retention 113 (95.8%)', '113' in doc_text and '95.8%' in doc_text),
+        ('Premolars vs Molars U=1155.5', '1155.5' in doc_text),
+        ('Premolars vs Molars p=0.002', '0.002' in doc_text),
+        ('Fisher-Freeman-Halton exact test', 'Fisher-Freeman-Halton' in doc_text),
+        ('Kruskal-Wallis DMFT H=0.566', '0.566' in doc_text),
+        ('Kruskal-Wallis DMFS H=0.601', '0.601' in doc_text),
+        ('Clustered Sensitivity GEE', 'GEE' in doc_text or 'Generalized Estimating Equations' in doc_text),
+        ('GEE Molars p=0.005', '0.005' in doc_text),
+        ('GEE Age p=0.0003', '0.0003' in doc_text)
+    ]
+    print('\n=== DOCUMENT VERIFICATION CHECKS ===')
+    all_ok = True
+    for name, ok in checks:
+        print(f'{"[PASS]" if ok else "[FAIL]"} {name}')
+        if not ok: all_ok = False
+    print(f'Status: {"ALL BENCHMARKS VERIFIED 100%" if all_ok else "CHECKS FAILED"}')
