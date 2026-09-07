@@ -1,0 +1,105 @@
+=== PARAGRAPHS ===
+[0] STATISTICAL RESULTS & CLINICAL FINDINGS REPORT
+[1] Clinical Evaluation of Pit and Fissure Sealant Retention and Caries Prevention: A 3-Month Longitudinal Investigation
+Prepared for International Journal Publication (Scopus Indexed)
+[3] 1. Baseline Sample Characteristics & Anatomical Distribution
+[4] A total of 40 pediatric patients (29 boys [72.5%] and 11 girls [27.5%]) aged 8 to 12 years (mean age: 10.12 ± 1.24 years; median: 10.0 years) participated in this 3-month longitudinal study. Baseline epidemiological assessment demonstrated a mean DMFT index of 2.58 ± 1.24 (median: 3.0; range: 0–5) and a mean DMFS index of 4.88 ± 2.21 (median: 5.0; range: 0–8). Among the participants, 95.0% (n = 38) were caries-active at baseline, reflecting a clinically relevant pediatric cohort with genuine occlusal caries susceptibility.
+[5] A total of 118 sound permanent teeth received light-cured resin-based fissure sealants (mean: 2.95 ± 1.80 teeth per child; range: 1–8 teeth). The anatomical distribution comprised 71 maxillary teeth (60.2%) and 47 mandibular teeth (39.8%). By tooth class, premolars accounted for 65.3% (n = 77; including 21 RFP, 19 LFP, 17 RSP, and 20 LSP), while permanent molars accounted for 34.7% (n = 41; including 22 RFM, 18 LFM, and 1 RSM).
+[6] Table 1. Demographic profile of participants and anatomical distribution of sealed permanent teeth
+[8] 2. Primary Clinical Outcomes at 3-Month Follow-Up
+[9] At the 3-month post-placement clinical evaluation, the overall retention rate according to Simonsen's criteria was as follows:
+[10] Score 0 (Completely Retained): 85 teeth (72.0%) demonstrated intact, complete sealant coverage with fully sealed pit and fissure systems.
+[11] Score 1 (Partially Retained): 28 teeth (23.7%) exhibited partial sealant loss with portions of the grooves exposed, while the remaining material remained bonded.
+[12] Score 2 (Completely Missing): 5 teeth (4.2%) suffered total sealant dislodgement with complete loss of the protective resin layer.
+[13] Combining Scores 0 and 1, the total satisfactory retention rate achieved was 95.8% (n = 113). Concurrently, 95.8% (n = 113) of evaluated teeth remained completely caries-free (Sound), while active occlusal caries incidence occurred in 4.2% (n = 5).
+[14] Table 2. Cumulative clinical retention and caries incidence 3 months post-placement (N = 118)
+[16] 3. Statistical Analysis of Findings & In-Depth Clinical Deductions
+[17] 3.1 Finding 1: Tooth Type Disparity (Premolars vs. Molars)
+[18] Statistical Result: A highly statistically significant difference in sealant retention was detected between permanent premolars and permanent molars (Mann-Whitney U = 1155.5, Z = -3.054, p = 0.002; Pearson Chi-Square χ² = 13.291, df = 2, p = 0.0013).
+[19] Observed Data: Premolars achieved an 80.5% complete retention rate (n = 62/77) and experienced zero total loss (0.0%). In sharp contrast, molars exhibited a 56.1% complete retention rate (n = 23/41), a 31.7% partial loss rate (n = 13/41), and accounted for 100% of all complete loss cases (12.2%, n = 5/41).
+[20] Clinical & Biological Rationale for the Manuscript:
+[21] 1. Fissure Morphology & Depth: Permanent molars possess complex, constricted, and deep 'I-type' and 'bottle-shaped' fissures that retain organic remnants and prevent deep etchant and resin penetration. Conversely, premolars have shallower, broader, V-shaped grooves that allow comprehensive acid etching and complete resin flow.
+[22] 2. Moisture Control & Saliva Contamination: Isolation in the posterior molar region is technically demanding in pediatric patients due to proximity to the parotid duct and active tongue movements, increasing the risk of micro-salivary contamination during bonding.
+[23] 3. Masticatory Load Concentration: Permanent first molars absorb the highest vertical and lateral chewing forces, subjecting molar sealants to greater shearing stress than premolars.
+[24] Table 3. Comparison of sealant retention across Anatomical Factors: Tooth Type and Jaw Location (N = 118)
+[26] 3.2 Finding 2: Invariance Across Jaw Location (Maxillary vs. Mandibular Arches)
+[27] Statistical Result: No statistically significant difference in sealant retention was observed between maxillary and mandibular arches (Mann-Whitney U = 1603.5, Z = -0.456, p = 0.648; Pearson Chi-Square χ² = 0.888, df = 2, p = 0.641).
+[28] Observed Data: Maxillary teeth exhibited 73.2% complete retention (n = 52/71) and 2.8% complete loss (n = 2/71), while mandibular teeth exhibited 70.2% complete retention (n = 33/47) and 6.4% complete loss (n = 3/47). Mean ranks were closely matched (58.58 for upper vs. 60.88 for lower).
+[29] Clinical Interpretation for the Manuscript: These findings demonstrate that standardized quadrant isolation with cotton rolls and saliva ejectors provides equivalent moisture control in both arches, confirming that jaw position is not an inherent risk factor for sealant failure when clinical protocols are strictly adhered to.
+[30] 3.3 Finding 3: Influence of Patient Age and Gender Equivalence
+[31] Statistical Result for Age: Sealant retention differed significantly between age groups (Mann-Whitney U = 1328.0, Z = -2.726, p = 0.006). Older children (> 10 years; 11–12 years) achieved 81.5% complete retention (n = 53/65) and 0.0% complete loss, whereas younger children (≤ 10 years; 8–10 years) achieved 60.4% complete retention (n = 32/53) and exhibited all 5 cases of complete sealant loss (9.4%).
+[32] Clinical & Behavioral Rationale for Age: Older children exhibit superior chairside behavioral cooperation, facilitating uninterrupted etching, washing, and drying. Furthermore, premolars and second molars in 11–12-year-olds have reached full clinical crown emergence, avoiding subgingival opercula and moisture pooling commonly encountered in recently erupted molars of younger children.
+[33] Statistical Result for Gender: Sealant retention showed no statistically significant difference between male and female patients (Mann-Whitney U = 1441.5, Z = -1.221, p = 0.222). Complete retention was 76.0% in boys (n = 57/75) and 65.1% in girls (n = 28/43), confirming clinical and biological equivalence.
+[34] Table 4. Comparison of sealant retention across Demographic Subgroups (N = 118)
+[36] 3.4 Finding 4: Absolute Dependency Between Sealant Integrity and Caries Prevention
+[37] Statistical Result: Cross-tabulation revealed a statistically definitive association between sealant retention status and 3-month caries incidence (Pearson Chi-Square χ² = 118.00, df = 2, p < 0.0001).
+[38] Observed Data: Teeth with completely retained sealants (Score 0, n = 85) and partially retained sealants (Score 1, n = 28) demonstrated a 100% caries-free rate (0.0% caries). Conversely, 100% of newly developed carious lesions (n = 5) occurred exclusively in teeth that experienced complete sealant loss (Score 2, n = 5).
+[39] Clinical & Preventive Significance for the Manuscript: This provides robust clinical evidence supporting Simonsen's sealant doctrine. Intact and partially intact resin sealants provide total protection by sealing deep micro-pits against Streptococcus mutans colonization and carbohydrate stagnation. Once a sealant is totally dislodged, previously etched and exposed deep fissures are rapidly reinfected and susceptible to active decay.
+[40] Table 5. Contingency table of Sealant Retention Status vs. 3-Month Caries Incidence (N = 118)
+[42] 3.5 Finding 5: Baseline DMFT/DMFS Indices Stratified by Retention Outcome
+[43] Statistical Result: Comparison of baseline DMFT and DMFS across the three retention outcomes (Score 0: DMFT = 2.24 ± 1.19, DMFS = 4.52 ± 2.33; Score 1: DMFT = 2.39 ± 1.20, DMFS = 4.89 ± 2.20; Score 2: DMFT = 2.20 ± 1.64, DMFS = 4.20 ± 3.19) showed no statistically significant differences (Kruskal-Wallis / ANOVA p > 0.05).
+[44] Clinical Deduction: This confirms that a patient's pre-existing baseline caries severity did not confound the technical retention of the sealant. Retention failure was governed by anatomical morphology and moisture isolation rather than individual caries susceptibility.
+[45] Table 6. Baseline DMFT and DMFS indices across 3-Month Retention Groups
+[47] 4. Key Synthesis Points for the Discussion Section of the Manuscript
+[48] The following bullet points summarize the core conclusions that can be directly adapted into the Discussion section of the research paper:
+[49] 1. High Short-Term Success: A 95.8% cumulative retention rate (72.0% complete + 23.7% partial) confirms the high reliability of light-cured resin-based sealants placed in pediatric clinics.
+[50] 2. Superiority of Premolars: Premolars showed significantly higher retention than molars (80.5% vs. 56.1%, p = 0.002), demonstrating that shallower occlusal anatomy promotes superior micromechanical resin penetration.
+[51] 3. Enhanced Vigilance for Molars: Because 100% of complete sealant dislodgements occurred in permanent molars (12.2% failure rate), clinical protocols should emphasize enhanced moisture control (e.g., rubber dam isolation or four-handed dentistry) during molar sealant application.
+[52] 4. Age-Related Compliance Factor: The significant improvement in retention in children > 10 years (81.5% vs. 60.4%, p = 0.006) underlines the dual importance of patient behavioral cooperation and full clinical crown eruption.
+[53] 5. Conclusive Preventive Barrier: The 100% caries-free status in retained sealants versus 100% caries occurrence in completely lost sealants (p < 0.0001) proves that sealant integrity is the primary determinant of occlusal caries prevention.
+
+=== TABLES ===
+
+--- Table 1 (3 rows, 2 cols) ---
+Row 0: Study Cohort: 40 Patients (29 Boys, 11 Girls; Ages 8–12) | Evaluated Units: 118 Sound Permanent Teeth (77 Premolars, 41 Molars)
+Row 1: Baseline Caries: Mean DMFT = 2.58 ± 1.24 | Mean DMFS = 4.88 ± 2.21 | Follow-Up Period: 3 Months Post-Application
+Row 2: Evaluation Index: Simonsen's Retention Criteria (Scores 0, 1, 2) | Statistical Tests: Mann-Whitney U Test, Pearson's Chi-Square (α = 0.05)
+
+--- Table 2 (11 rows, 4 cols) ---
+Row 0: Variable / Classification | Subcategory / Tooth Code | N (%) | Summary Metric (Mean ± SD, Range)
+Row 1: Patient Gender (N = 40) | Male (Boys) Female (Girls) | 29 (72.5%) 11 (27.5%) | Ratio = 2.64 : 1
+Row 2: Patient Age (N = 40) | ≤ 10 Years (8–10) > 10 Years (11–12) | 24 (60.0%) 16 (40.0%) | Mean = 10.12 ± 1.24 years Range = 8.0 – 12.0 years
+Row 3: Baseline Caries (N = 40) | Caries-Active (DMFT > 0) Caries-Free (DMFT = 0) | 38 (95.0%) 2 (5.0%) | DMFT = 2.58 ± 1.24 (Range: 0–5) DMFS = 4.88 ± 2.21 (Range: 0–8)
+Row 4: Jaw Location (N = 118) | Maxillary (Upper Arch) Mandibular (Lower Arch) | 71 (60.2%) 47 (39.8%) | —
+Row 5: Tooth Type (N = 118) | Premolars (Permanent) Molars (Permanent) | 77 (65.3%) 41 (34.7%) | Teeth per child = 2.95 ± 1.80 (Range: 1 – 8)
+Row 6: Specific Molar Positions | Right First Molar (RFM) Left First Molar (LFM) Right Second Molar (RSM) | 22 (18.6%) 18 (15.3%) 1 (0.8%) | Total Molars = 41 (34.7%)
+Row 7: Specific Premolar Positions | Right First Premolar (RFP) Left Second Premolar (LSP) Left First Premolar (LFP) Right Second Premolar (RSP) | 21 (17.8%) 20 (16.9%) 19 (16.1%) 17 (14.4%) | Total Premolars = 77 (65.3%)
+Row 8:  |  |  | 
+Row 9:  |  |  | 
+Row 10:  |  |  | 
+
+--- Table 3 (7 rows, 3 cols) ---
+Row 0: Clinical Parameter | Simonsen Criteria / Outcome | N (%)
+Row 1: Retention Rate (Simonsen's) | Score 0: Completely Retained | 85 (72.0%)
+Row 2:  | Score 1: Partially Retained | 28 (23.7%)
+Row 3:  | Score 2: Completely Missing | 5 (4.2%)
+Row 4: Cumulative Retention | Satisfactory Retention (Score 0 + Score 1) | 113 (95.8%)
+Row 5: Caries Incidence at 3 Months | Caries-Free (Sound Tooth) | 113 (95.8%)
+Row 6:  | Caries Incidence (Decayed) | 5 (4.2%)
+
+--- Table 4 (5 rows, 8 cols) ---
+Row 0: Anatomical Factor | N Evaluated | Score 0 (Complete) N (%) | Score 1 (Partial) N (%) | Score 2 (Missing) N (%) | Mean Rank | Mann-Whitney U (Z) | p-value
+Row 1: Premolars (Permanent) | 77 | 62 (80.5%) | 15 (19.5%) | 0 (0.0%) | 54.01 | U = 1155.5 Z = -3.054 | p = 0.002 ** (Significant)
+Row 2: Molars (Permanent) | 41 | 23 (56.1%) | 13 (31.7%) | 5 (12.2%) | 69.82 |  | 
+Row 3: Maxillary (Upper Arch) | 71 | 52 (73.2%) | 17 (23.9%) | 2 (2.8%) | 58.58 | U = 1603.5 Z = -0.456 | p = 0.648 (NS)
+Row 4: Mandibular (Lower Arch) | 47 | 33 (70.2%) | 11 (23.4%) | 3 (6.4%) | 60.88 |  | 
+
+--- Table 5 (5 rows, 8 cols) ---
+Row 0: Demographic Factor | N Evaluated | Score 0 (Complete) N (%) | Score 1 (Partial) N (%) | Score 2 (Missing) N (%) | Mean Rank | Mann-Whitney U (Z) | p-value
+Row 1: Age ≤ 10 Years (8–10) | 53 | 32 (60.4%) | 16 (30.2%) | 5 (9.4%) | 66.94 | U = 1328.0 Z = -2.726 | p = 0.006 ** (Significant)
+Row 2: Age > 10 Years (11–12) | 65 | 53 (81.5%) | 12 (18.5%) | 0 (0.0%) | 53.43 |  | 
+Row 3: Male (Boys) | 75 | 57 (76.0%) | 15 (20.0%) | 3 (4.0%) | 57.22 | U = 1441.5 Z = -1.221 | p = 0.222 (NS)
+Row 4: Female (Girls) | 43 | 28 (65.1%) | 13 (30.2%) | 2 (4.7%) | 63.48 |  | 
+
+--- Table 6 (5 rows, 6 cols) ---
+Row 0: Retention Status (Simonsen's) | Caries-Free (Sound) N (%) | Caries Incidence (Decayed) N (%) | Total Evaluated | Chi-Square (χ²) | p-value
+Row 1: Score 0 (Completely Retained) | 85 (100.0%) | 0 (0.0%) | 85 (100.0%) | χ² = 118.00 df = 2 | p < 0.0001 *** (Extremely Significant)
+Row 2: Score 1 (Partially Retained) | 28 (100.0%) | 0 (0.0%) | 28 (100.0%) |  | 
+Row 3: Score 2 (Completely Missing) | 0 (0.0%) | 5 (100.0%) | 5 (100.0%) |  | 
+Row 4: Total Evaluated | 113 (95.8%) | 5 (4.2%) | 118 (100.0%) |  | 
+
+--- Table 7 (4 rows, 5 cols) ---
+Row 0: Retention Group (Simonsen's) | Sample Size (Teeth) | Baseline DMFT (Mean ± SD) | Baseline DMFS (Mean ± SD) | ANOVA / Kruskal-Wallis
+Row 1: Score 0 (Complete Retention) | 85 | 2.24 ± 1.19 | 4.52 ± 2.33 | p > 0.05 (NS) (No Baseline Confounding)
+Row 2: Score 1 (Partial Retention) | 28 | 2.39 ± 1.20 | 4.89 ± 2.20 | 
+Row 3: Score 2 (Complete Loss) | 5 | 2.20 ± 1.64 | 4.20 ± 3.19 | 

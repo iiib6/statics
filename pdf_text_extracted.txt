@@ -1,0 +1,462 @@
+ 
+Pesquisa Brasileira em Odontopediatria e Clínica Integrada 2020; 20:e5110 
+https://doi.org/10.1590/pboci.2020.004 
+ ISSN 1519-0501 / eISSN 1983-4632 
+ 
+     Association of Support to Oral Health Research - APESB 
+1 
+ORIGINAL ARTICLE 
+ 
+ 
+Clinical Evaluation of Pit and Fissure Sealants Placed by 
+Undergraduate Dental Students in 5-15 Years-old Children in 
+Iraq 
+ 
+ 
+ 
+Hassan Faleeh Farhan Al-Sultani1, Wissam Hamid Aljanabi1, Haider Ali Hasan2, Najran 
+Mohammed Hussain Al-Murib3, Mohammad Khursheed Alam4 
+ 
+ 
+  
+1Department of Preventive, Orthodontics and Pediatric Dentistry, College of Dentistry, University of Babylon, Babylon, 
+Iraq. 
+2Oral and Maxillofacial Surgery Department, College of Dentistry, University of Babylon, Babylon, Iraq. 
+3Ministry of Health, Babylon, Iraq. 
+4Orthodontic Department, College of Dentistry, Jouf University, Sakaka, Kingdom of Saudi Arabia. 
+ 
+ 
+Author to whom correspondence should be addressed: Dr. Hassan Faleeh Farhan AL-Sultani, College of Dentistry, 
+University of Babylon, Iraq. Aljamea sq. 60 street. Phone: +009647727229908. E-mail: wateefihassan@gmail.com.  
+ 
+ 
+Academic Editors: Alessandro Leite Cavalcanti and Wilton Wilney Nascimento Padilha 
+ 
+ 
+Received: 17 July 2019 / Accepted: 19 October 2019 / Published: 25 October 2019 
+ 
+How to cite this article: AL-Sultani HFF, Aljanabi WH, Hasan HA, Al-Murib NMH, Alam MK. Clinical evaluation of pit 
+and fissure sealants placed by undergraduate dental students in 5 -15 years-old children in Iraq. Pesqui Bras 
+Odontopediatria Clín Integr. 2020; 20:e5110. https://doi.org/10.1590/pboci.2020.004 
+ 
+ 
+Abstract 
+Objective: To clinically evaluate the retention and marginal discoloration of pit and fissure sealants applied 
+to primary and permanent teeth. Material and Methods: The study population encompassed of 5-15 years-
+old children. After consenting, a light-curing sealant was applied to etched pits and fissures of occlusal 
+surfaces of selected sound teeth. The retention rate and marginal discoloration were assessed, 3 months 
+after application of the sealants based on the criteria proposed by Simonsen’s criteria (total retention: score 
+0, partial loss: score 1, and total loss: score 2). Each tooth was considered as an independent sample during 
+analysis. Results: The achieved sample size was 43 children aged 5 -15 years (mean age=10.0 years). 
+Therefore, data of 100 teeth from 43 children were used for the final analysis. The percentage of completely 
+retained sealants (59%) was higher than the percentage of partially retained sealants (23%) and completely 
+missing sealants (18%) after 3 months follow up. Out of 100 sealed teeth, 60% were either  had marginal 
+discoloration or completely missing. Using the Mann-Whitney test, there was a statistically significant 
+difference (p<0.05) between primary and permanent teeth in terms of retention. However, there was no 
+statistical difference (p>0.05) between upper and lower teeth in terms of retention. Conclusion: The success 
+rate of fissure sealants after 3 months follow-up was satisfactory. 
+ 
+Keywords: Pit and Fissure Sealants; Dental Care for Children; Students, Dental.
+
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+2 
+Introduction 
+It is well known that dental caries is the most prevalent oral disease and regarded as a public health 
+problem [1,2]. Newly erupted primary and permanent molars are at high risk for developing dental caries due 
+to the complex morphology of their occlusal surfaces, which involve pits and fissures [1,3,4]. Occlusal pits and 
+fissures favor the stagnation of food debris and bacteria and facilitate the initiation of tooth decay [5]. 
+From various preventive strategies that have been widely used in the dentistry field, sealing deep pits 
+and fissures are an evidence-based caries preventive technique to protect the occlusal surfaces against dental 
+caries [6]. Pit and fissure sealants were introduced in the 1960s and have been widely use d since then [4,7]. 
+Once the protective role of the pit and ﬁssure sealants was established, different materials of fissure sealants 
+were introduced, such as resin-based sealants, glass ionomer-based sealants, and polyacid-modiﬁed resin-based 
+sealants [8]. 
+The preventive properties of pit and fissure sealants have been verified in numerous studies [3,9]. 
+Fissure sealant can reduce the incidence of dental caries by more than half in the first five years after the 
+application when each tooth is sealed only once with no follow-up treatment. In cases that the sealed teeth are 
+regularly (annually, for instance) examined and the defected or lost fissure sealants are renewed, the chance of 
+caries could be reduced by 75% up to four years [10]. Although pit and fissu re sealants are regarded as 
+efficacious preventive strategies [11], failure rates are often ranged from 5% to 10% annually [12], mostly due 
+to poor retention of pit and fissure sealants [13,14]. One of the main reasons for the early loss of fissure 
+sealants is the contamination of the tooth surface with saliva during their application [15]. This is of special 
+importance as fissure sealant is usually applied to children’s (who might be less cooperative) teeth, which might 
+not be fully erupted [16]. Therefore, factors such as “stage of tooth eruption, the behavior of the child, the 
+possibility of establishing adequate isolation by applying rubber dam or cotton roll” should be taken in 
+consideration during the application of the sealants [17,18]. 
+To our knowledge, no study has evaluated the retention rate of pit and fissure sealants among children 
+in Hilla city, Babylon governorate, Iraq. Therefore, this study was designed and conducted among 5 to 15 -
+year-old children to assess the success rate of the pit and fi ssure sealants placed by undergraduate dental 
+students to primary and permanent teeth. The aim of the current study was to clinically evaluate the retention 
+and marginal discoloration of pit and fissure sealants applied to both dentitions. 
+ 
+Material and Methods 
+Study Design and Sample 
+This longitudinal study involved children aged 5 -15 years, who attended to the Department of 
+Pediatric and Preventive Dentistry, College of Dentistry, University of Babylon, Hillah city between December 
+2018 and March 2019. 
+Inclusion criteria were sound (caries-free) fully erupted primary and permanent premolars and molars 
+with the absence of prior sealants or restorations and have intact deep and retentive fissures. Teeth with initial 
+carious lesions or cavities were excluded from the study, and children, whom parents or guardians were unable 
+to give consent form were also excluded from the study. 
+ 
+Data Collection 
+The children selected for the study received a preventive program including oral examination, oral 
+hygiene instruction and motivation, prophylaxis and topical fluoride application, extraction of infected teeth, 
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+3 
+and restorations in addition to the application of pit and fissure sealants for one or more teeth. Fissure sealants 
+were applied by undergraduate dental students (fifth stage) under the supervision of a specialist (i.e., 
+Preventive and Pediatric) dentists. 
+The examination of teeth was done by calibrated examiners. The examiners were calibrated with an 
+experienced dentist by examining the sealants in 10 patients (20 teeth). The same children were re -examined 
+again by the examiners after 10 days to eliminate the chance of memory bias. During calibration, Kappa values 
+for intra- and inter-examiner reproducibility were 0.85 and 0.93, respectively. Information on children’s age 
+and gender, type of residential area (rural/urban), type of fissure sealant used, and method of application were 
+obtained from the records. 
+The procedure of application of pit and fissure sealants involved: a) prophylaxis and polishing; b) 
+isolation with cotton rolls; c) enamel surface pretreatment with acid etching only (conventional acid etching 
+without adhesive) using 37 % phosphoric acid gel (Super Etch LV, SDI Limited, Bayswater, Australia) for 30 
+seconds and according to manufacturer’ instructions; d) rinsing of the teeth with water for 10-20 seconds and 
+then air-dried using air syringe; e) placement of pit and fissure sealant: A  light curing, resin-based, white, 
+unfilled pit and fissure sealant (i.e., Conseal f, SDI Limited, Bayswater, Australia) was applied (based on 
+manufacturers’ instructions) to the etched pits and fissures of the occlusal surfaces; and f) crosschecking of the 
+occlusion with articulating papers and reducing premature contacts using composite finishing burs. All sealed 
+teeth were clinically assessed 3 months after placement of pit and fissure sealants. 
+The retention rate was judged based on ‘Simonsen’s criteria’ [19] for retention of sealants: a) Total 
+retention: total retention of the sealant on the occlusal surface (score 0); b) Partial loss: presence of sealant with 
+fractures and loss of material (score 1); and c) Total loss: absence of the sealant on  the occlusal surface (score 
+2). 
+Simonsen’s criteria were described by many researchers as a simple, convenience, reliable, and valid 
+criteria for evaluation of the retention of pit and fissure sealants [20 -22]. The pattern of marginal 
+discoloration was also checked as present or absent of the discoloration. This could provide an initial sign of 
+marginal leakage [23]. 
+ 
+Data Analysis 
+Microsoft Excel (version 2013) and Statistical Package for the Social Sciences (SPSS) statistical 
+software (version 23) were used for data entry and analysis, respectively. Each examined tooth was considered 
+as an independent sample during analysis. The frequency and percentage of each type of tooth condition were 
+calculated. The condition of the examined teeth was compared between upper and lower teeth, urban and rural 
+areas, boys and girls, caries-free children and those with caries in their other teeth at the time of evaluation of 
+fissure sealants. Mann-Whitney test was used to assess if there is a difference in sealant retention according to 
+jaw location and dentition type. P-values <0.05 were regarded as statistically significant. 
+ 
+Ethical Aspects 
+This study was approved by the Ethics Committee of the College of Dentistry, University of Babylon. 
+Before starting the study, all parents or guardians were informed about the aim, nature, and potential 
+distresses and benefits of the study. Then, informed consent was obtained from all of them. 
+ 
+Results 
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+4 
+Out of 48 children, who participated in the study, 43 (89.6%) participants were exa mined 3 months 
+after the application of fissure sealants. Five (10.4%) participants dropped out of the study for unknown 
+reasons. Therefore, the achieved sample size was 43 children aged 5-15 years (mean age = 10.0 years). Table 1 
+shows the demographic characteristics of the children involved in this study. Most of the children were boys 
+(53.5%), between 5 and 10 years (55.8%) and living in urban areas (62.8%). 
+ 
+Table 1. Demographic characteristics of the participants. 
+Variables N % 
+Gender   
+Boy 23 53.5 
+Girl 20 46.5 
+Age (Years)   
+5-10 24 55.8 
+11-15 19 44.2 
+Area of Residency   
+Urban 27 62.8 
+Rural 16 37.2 
+ 
+Table 2 illustrates the demographic variables of samples of the study. As mentioned above, each tooth 
+was considered as an independent sample. Therefore, data of 100 teeth from 43 children were used for the final 
+analysis. About 55% of the examined teeth were in the upper arch and 45% were in the lower arch. Most sealed 
+teeth were permanent (82%); while, only (18%) of sealed teeth were primary teeth. 
+ 
+Table 2. Demographic characteristics of the included teeth (N=100). 
+Variables Categories N % 
+Gender Boy 53 53.0 
+ Girl 47 47.0 
+Age (Years) 5-10 56 56.0 
+ 11-15 44 44.0 
+Area of Residency Urban 67 67.0 
+ Rural 33 33.0 
+Jaw Upper 55 55.0 
+ Lower 45 45.0 
+Dentition Type Primary 18 18.0 
+ Permanent 82 82.0 
+ 
+Table 3 shows retention and the presence or absence of marginal discoloration three months after the 
+placement of pit and fissure sealants. The percentage of completely retained sealants (59%) was higher than the 
+percentage of partially retained sealants (23%) and completely missing sealants (18%) after 3 months follow up. 
+The percentage of sealed teeth with marginal discoloration (42%) was higher  than sealed teeth with no 
+discoloration (40%). Out of 100 examined teeth, 97% were reported as caries-free at the evaluation time. Only 
+3% of the examined teeth were recorded as decayed at the evaluation or examination time. 
+ 
+Table 3. Condition of the teeth when examined three months after fissure sealant application. 
+Condition of the FS N % 
+Retention [12]   
+Completely Retained 59 59.0 
+Partially Retained 23 23.0 
+Completely Missing 18 18.0 
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+5 
+Marginal Discoloration   
+No Discoloration 40 40.0 
+Discolored 42 42.0 
+Not Applicable 18 18.0 
+Dental Status   
+Caries Free 97 97.0 
+Caries 3 3.0 
+ 
+Figure 1 illustrates the sealant retention of primary teeth and permanent teeth, three months after the 
+placement of pit and fissure sealants. Out of 18 sealed primary teeth, 38.9% were completely retained, 16.7% 
+were partially retained and 44.4% were completely missing. In addition, out of 82 sealed permanent teeth, 
+63.4% were completely retained, 24.4% were partially retained and 12.2% were completely missing. Using a 
+Mann-Whitney test, there was a statistically significant difference (p<0.05) between primary and permanent 
+teeth in terms of retention of pit and fissure sealants. 
+ 
+ 
+Figure 1. Retention of the sealants in primary and permanent teeth after 3 months. 
+ 
+Figure 2 shows the distribution of sealant retention according to the jaw location, 3 months after the 
+application of fissure sealants. Out of 55 sealed upper teeth, 63.6% were completely retained, 14.6% were 
+partially retained and 21.8% were completely missing. In addition, out of 45 sealed lower teeth, 53.4% were 
+completely retained, 33.3% were partially retained and 13.3% were completely missing. Statistically, there was 
+no significant difference (p>0.05) in the retention of fissure sealants between upper and lower teeth. 
+Table 4 illustrates the marginal discolorations at 3 months intervals by dentition type and jaw 
+location. In general, out of 100 sealed teeth, 60% were either had marginal discoloration or completely missing. 
+More specifically, out of 18 examined primary teeth, only 33.3% of the sealed teeth were without any marginal 
+discoloration. The remaining of sealed teeth, 66.7% were either have marginal discoloration or fissure sealants 
+were completely missing. In addition, out of 82 sealed permanent teeth, 41.5% of the sealed teeth were without 
+any marginal discoloration; whereas, 58.5% of the sealed teeth were affected by marginal discoloration and 
+completely missing of the sealants. Moreover, out of 55 sealed upper teeth, 49.1% were without any marginal 
+discoloration, and 51.9% of the sealed teeth were either have marginal discolorations or completely missing of 
+the fissure sealants. For the 45 sealed lower teeth, 57.8% had marginal discolorations of fissure sealants, 28.9% 
+had no marginal discolorations and 13.3% had completely missed of fissure sealants. 
+38.9 
+63.4 
+16.7 
+24.4 
+44.4 
+12.2 
+0 
+10 
+20 
+30 
+40 
+50 
+60 
+70 
+80 
+Primary Teeth Permanent Teeth 
+Completely Retained Partially Retained Completely Missing 
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+6 
+ 
+Figure 2. Distribution of sealant retention according to jaw location after 3 months. 
+ 
+ 
+Table 4. Marginal discoloration by dentition type and jaw location. 
+ Marginal Discoloration 
+Variables Discoloration Present Discoloration Absent Completely Missing 
+ N (%) N (%) N (%) 
+Dentition Type    
+Primary 4 (22.2) 6 (33.3) 8 (44.5) 
+Permanent 38 (46.3) 34 (41.5) 10 (12.2) 
+Jaw Location    
+Upper 16 (29.1) 27 (49.1) 12 (21.8) 
+Lower 26 (57.8) 13 (28.9) 6 (13.3) 
+ 
+Discussion 
+In general, the rate of success of pit and fissure sealants after 3 months follow up was (59%) indicating 
+that sealed teeth were sound and had intact or adequate sealing after the application of pit and fissure sealants. 
+Such finding is supported by the result that 97% of the ins pected teeth were free of caries at the evaluation 
+time. Dental caries was found only in 3 teeth during the follow-up interval. Though some teeth had a partial 
+and complete loss of sealants, they did not develop any carious lesion, possibly due to short time of the follow-
+up interval and other factors (e.g., oral hygiene, diet, saliva), which play an important role in initiation and 
+progression of tooth decay [24]. In addition, the low viscosity and fluoride release resin-based (unfilled) fissure 
+sealant (Conseal f, SDI) that has been used in this study might be useful in decreasing caries incidence because 
+it allows the deepest penetration into the deepest pits and fissures and enhances caries prevention, 
+remineralization, and the inhibition of enamel demineralization. The unfilled resin-based sealant penetrates 
+deeper into the micro porosities of the pits and fissures due to its low viscosity and hence, maybe better 
+retained [25,26]. 
+The presence 41% of teeth that had either partial or complete loss of pit and fissure sealants reveals 
+that the failure rate of pit and fissure sealants was also high during the first 3 months after application 
+suggesting the need for further exploration about the causes of failure and the potential techniques that could 
+increase sealant retention. Out of 100 sealed primary and permeant teeth, 42% were with marginal 
+discoloration indicating a loss of marginal integrity prior to additional sealant failure. P revious research has 
+shown that failure of pit and fissure sealants is not uncommon at a baseline and 6 months after application 
+63.6 
+53.4 
+14.6 
+33.3 
+21.8 
+13.3 
+0 
+10 
+20 
+30 
+40 
+50 
+60 
+70 
+80 
+Upper Teeth Lower Teeth 
+Completely Retained Partially Retained Completely Missing 
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+7 
+[27]. Therefore, it is preferable to repeat the follow-up visits after 6 and 12 months to provide a clearer picture 
+about the current findings.  
+Literature reports that inadequate isolation and contamination of pits and fissures with saliva prevent 
+the formation of tags and thereby the mechanical retention of the resin-based sealants [28]. Therefore, it could 
+be suggested that improper isolation and dryness of teeth using cotton rolls and triple syringe, in addition to 
+non-usage of a rubber dam during fissure sealants application were responsible for partial and complete loss of 
+pit and fissure sealants in the present study. In addition, the experience of undergraduate dental students in the 
+placement of pit and fissure sealants and the collaboration of children might have an influence on sealant 
+retention.  
+Sealant retention, according to dentition type, was studied comparing primary teeth with permanent 
+teeth. In this study, retention of the sealants was more in permanent than primary teeth in which there was a 
+statistically significant difference (p<0.05) in the retention of pit and fissure sealants between primary and 
+permanent teeth. Such findings disagreed with previous research, which reported that sealants are more 
+effective in permanent molars than primary molars, but this retention was not statistically significant 
+[5,29,30]. Such findings may be due to morphological (e.g., shallow pits and fissures) and histological (e.g., 
+prismless enamel) characteristics of primary teeth in comparison to permanent teeth, which can present 
+differences in sealant retention [5]. It could be argued that young children, who have more primary te eth in 
+their mouths are often less cooperative than older children.   
+Another comparison studied in the current study was sealant retention according to jaw location (i.e., 
+upper teeth versus lower teeth). Upper teeth retained sealants better than the lowe r teeth, but the difference 
+was not statistically significant (p>0.05). Such findings concurred with previous studies, which reported 
+greater sealant retention in upper teeth compared to lower teeth, but without a significant difference 
+[5,31,32,33]. Such findings may be attributed to relatively greater occlusal surface areas of mandibular teeth 
+compared to maxillary teeth, which could make the sealants more exposed to the oral environment and limit 
+their retention [34]. It could be argued that, in the absence of proper isolation (e.g., using rubber dam), lower 
+teeth might be subjected to contamination with saliva more than upper teeth resulting in a higher percentage 
+of sealant failure in lower teeth. 
+ 
+Conclusion 
+It was shown that the success rate of fissur e sealants after 3 months follow-up was satisfactory. 
+However, the relatively high percentages of partial and complete missing of pit and fissure sealants, in the 
+current study, call for the need to reevaluate the preventive program in Pediatric and Preventive dental clinic 
+thorough fully. It could be suggested that using the other types of fissure sealants (e.g., resin -modified glass 
+ionomer-based sealants) in addition to proper isolation using, for example, a rubber dam during application of 
+pit and fissure sealants may be useful in increasing the retention and reducing marginal discoloration of the 
+sealed teeth. Through careful use of pit and fissure sealants, the morphology of the tooth could be altered, and 
+the proven ecological niches of Streptococcus mutants can be removed. Hence, the goal of the primary level of 
+prevention, which is preventing dental caries before its occurrence, can be achieved. 
+ 
+Authors’ Contributions 
+HFFA  0000-0002-3247-8194 Conceptualization, Methodology, Investigation, Formal Analysis, Writing – 
+Original Draft Preparation and Writing – Review and Editing. 
+
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+8 
+WHA  0000-0002-8792-3064 Conceptualization, Methodology, Investigation, Formal Analysis, Writing – 
+Original Draft Preparation and Writing – Review and Editing. 
+HAH  0000-0002-4630-1998 Investigation, Formal Analysis, Writing – Original Draft Preparation and Writing 
+– Review and Editing. 
+NMHA  0000-0002-7198-6415 Investigation, Formal Analysis, Writing – Original Draft Preparation and Writing 
+– Review and Editing. 
+MKA  0000-0001-7131-1752 Investigation, Formal Analysis, Writing – Original Draft Preparation and Writing 
+– Review and Editing. 
+All authors declare that they contributed to critical review of intellectual content and approval of the final version to be 
+published. 
+ 
+Financial Support 
+None. 
+ 
+Conflict of Interest 
+The authors declare no conflicts of interest. 
+ 
+References 
+[1] Nogourani MK, Janghorbani M, Khadem P, Jadidi Z, Jalali S. A 12-month clinical evaluation of pit-and-fissure 
+sealants placed with and without etch-and-rinse and self-etch adhesive systems in newly-erupted teeth. J Appl Oral 
+Sci 2012; 20(3):352-6. https://doi.org/10.1590/s1678-77572012000300010 
+[2] Dye BA, Thornton-Evans G, Li X, Iafolla TJ. Dental caries and sealant prevalence in children and adolescents in the 
+United States, 2011-2012. NCHS Data Brief 2015; 191:1-8. 
+[3] Dennison JB, Straffon LH, Smith RC. Effectiveness of sealant treatment: over five years in an insured population. J 
+Am Dent Assoc 2000; 131(5):597-605. https://doi.org/10.14219/jada.archive.2000.0233 
+[4] Carvalho JC, Dige I, Machiulskiene V, Qvist V, Bakhshandeh A, Fatturi-Parolo C, et al. Occlusal caries: biological 
+approach for its diagnosis and management. Caries Res 2016; 50(6):527-42. https://doi.org/10.1159/000448662 
+[5] Bhushan U, Goswami M. Evaluation of retention of pit and fissure sealants placed with and without air abrasion 
+pretreatment in 6-8-year-old children – An in vivo study. J Clin Exp Dent 2017; 9(2):e211 -e217. 
+https://doi.org/10.4317/jced.53259 
+[6] Wendt LK, Koch G, Birkhed D. On the retention and effectiveness of fissure sealant in permanent molars after 15–20 
+years: a cohort study. Community Dent Oral Epidemiol 2001; 29(4):302-7. 
+https://doi.org/10.1034/j.1600-0528.2001.290410.x 
+[7] Takeuchi M. Sealing of the pit and fissure with resin adhesive. 3. Outlines of its progress to the present time. J pn 
+Dent J 1967; 4:33-46. 
+[8] Naaman R, El-Housseiny AA, Alamoudi N. The use of pit and fissure sealants - A literature review. Dent J 2017; 
+5(4):E34. https://doi.org/10.3390/dj5040034 
+[9] Wright JT, Tampi MP, Graham L, Estrich C, Crall JJ, Fontana M, et al. Sealants for preventing and arresting pit-
+and-fissure occlusal caries in primary and permanent molars. Pediatr Dent 2016; 38(4):282-308. 
+[10] Hicks M, Flaitz CM. Fissure sealants and conservative adhesive restoration: Scientific and clinical rationale. In: 
+Pinkham JR, Casamassimo PS, Fields HW, McTique DJ, Nowak A  (Eds.) Pediatric Dentistry: Infancy Through 
+Adolescence. 4th. ed. St. Louis: WB Saunders; 2005. p. 522-576. 
+[11] Bakhtiar M, Azadi N, Golkari A. A one-year evaluation of a free fissure sealant program. J Dent Biomater 2016; 
+3(4):306-14.  
+[12] Simonsen RJ. Pit and fissure sealant: review of the literature. Pediatr Dent 2002; 24(5):393-414. 
+[13] Kanellis MJ, Warren JJ, Levy SM. A comparison of sealant placement techniques and 12 -month retention rates. J 
+Public Health Dent 2000; 60(1):53-6. https://doi.org/10.1111/j.1752-7325.2000.tb03293.x 
+[14] De Luca-Fraga LR, Pimenta LA. Clinical evaluation of glass ionomer/resin-based hybrid materials used as pit and 
+fissure sealants. Quintessence Int 2001; 32(6):463-8. 
+[15] Azarpazhooh A, Main PA. Pit and fissure sealants in the prevention of dental caries in children and adol escents: a 
+systematic review. J Can Dent Assoc 2008; 74(2):171-7. 
+[16] Correr GM, Caldo-Teixeira AS, Alonso RC, Puppin-Rontani RM, Sinhoreti MA, Correr-Sobrinho L. Effect of saliva 
+contamination and re-etching time on the shear bond strength of a pit and f issure sealant. J Appl Oral Sci 2004; 
+12(3):200-4. https://doi.org/10.1590/s1678-77572004000300007 
+[17] El-Kalla IH, Garcia-Godoy F. Effect of saliva contamination on micromorphological adaptation of single -bottle 
+adhesives to etched enamel. J Clin Pediatr Dent 1999; 24(1):69-74. 
+
+---PAGE---
+ Pesqui. Bras. Odontopediatria Clín. Integr. 2020; 20:e5110 
+ 
+9 
+[18] Eminkahyagil N, Gokalp S, Korkmaz Y, Baseren M, Karabulut E. Sealant and composite bond strength to enamel 
+with antibacterial/self-etching adhesives. Int J Paediatr Dent 2005; 15(4):274-81. 
+https://doi.org/10.1111/j.1365-263X.2005.00654.x 
+[19] Simonsen RJ. Retention and effectiveness of dental sealant after 15 years. J Am Dent Assoc  1991; 122(10):34-42. 
+https://doi.org/10.14219/jada.archive.1991.0289 
+[20] Garrocho-Rangel A, Lozano-Vázquez C, Butron-Tellez-Giron C, Escobar-García D, Ruíz-Rodriguez S, Pozos-
+Guillen A. In vitro assessment of retention and microleakage in pit and fissure sealants following enamel pre-etching 
+with sodium hypochlorite deproteinisation. Eur J Paediatr Dent 2015; 16(3):212-6. 
+[21] Reddy VR, Chowdhary N, Mukunda KS, Kiran NK, Kavyarani BS, Pradeep MC. Retention of resin-based filled and 
+unfilled pit and fissure sealants: a comparative clinical study. Contemp Clin Dent  2015; 6(Suppl 1):S18-23. 
+https://doi.org/10.4103/0976-237X.152932 
+[22] Subramaniam P, Konde S, Mandanna DK. Retention of a resin-based sealant and a glass ionomer used as a fissure 
+sealant: a comparative clinical study. J Indian Soc Pedod Prev Dent 2008; 26(3):114-20. 
+[23] Khare M, Suprabha BS, Shenoy R, Rao A. Evaluation of pit-and-fissure sealants placed with four different bonding 
+protocols: a randomized clinical trial. Int J Paediatr Dent 2017; 27(6):444-53. https://doi.org/10.1111/ipd.12281 
+[24] Pinar A, Sepet E, Aren G, Bölükbaşi N, Ulukapi H, Turan N. Clinical performance of sealants with and without a 
+bonding agent. Quintessence Int 2005; 36(5):355-60. 
+[25] Rock WP, Weatherill S, Anderson RJ. Retention of three fissure sealant resins. The effects of etching agent and 
+curing method. Results over 3 years. Br Dent J 1990; 168(8):323-5. 
+[26] Yildiz E, Dorter C, Efes B, Koray F. A comparative study of two fissure sealants: a 2-year clinical follow-up. J Oral 
+Rehabil 2004; 31(10):979-84. https://doi.org/10.1111/j.1365-2842.2004.01334.x 
+[27] Kumaran P. Clinical evaluation of the retention of different pit and fissure sealants: a 1-year study. Int J Clin Pediatr 
+Dent 2013; 6(3):183-7. https://doi.org/10.5005/jp-journals-10005-1215 
+[28] Morphis TL, Toumba KJ. Retention of two fluoride pit and fissure sealants in comparison to a conventional sealant. 
+Int J Pediatr Dent 1998; 8(3):203-8. 
+[29] Feigal RJ. The use of pit and fissure sealants. Pediatr Dent 2002; 24:415-22. 
+[30] Doyle W, Brose J. A five-year study on the longevity of fissure sealants. ASDC J Dent Child 1978 45(2):127-9. 
+[31] Burt BA, Berman DS, Gelbier S, Silverstone LM. Retention of a fissure sealant six months after application. Br Dent J 
+1975; 138(3):98-100. 
+[32] Whitehurst V, Soni NN. Adhesive sealant clinical trial: results eighteen months aft er one application. J Prev Dent 
+1976; 3(3 Pt 2):20-2. 
+[33] McCune RJ, Bojanini J, Abodeely RA. Effectiveness of a pit and fissure sealant in the prevention of caries: three-year 
+clinical results. J Am Dent Assoc 1979; 99(4):619-23. https://doi.org/10.14219/jada.archive.1979.0344 
+[34] Baca P, Bravo M, Baca AP, Jimenez A, Gonzalez-Rodríguez MP. Retention of three fissure sealants and a dentin 
+bonding system used as fissure sealant in caries prevention: 12-month follow-up results. Med Oral Patol Oral Cir 
+Bucal 2007; 12(6):E459-63. 
