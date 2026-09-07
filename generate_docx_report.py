@@ -366,7 +366,7 @@ def create_document():
             t7.rows[i+1].cells[j].paragraphs[0].text = val
     style_academic_table(t7, [1.8, 0.7, 1.4, 1.4, 1.3, 1.3], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
     
-    p_t7_note = doc.add_paragraph("Note: Non-parametric Kruskal-Wallis H-test is reported as primary due to small group size in Score 2 (n = 5). Baseline caries experience did not differ significantly across retention groups (p > 0.05), demonstrating no baseline confounding.")
+    p_t7_note = doc.add_paragraph("Note: Non-parametric Kruskal-Wallis H-test is reported as primary due to small group size in Score 2 (n = 5). Baseline caries experience did not differ significantly across retention groups (p > 0.05), suggesting no evidence of baseline caries severity differences between retention groups.")
     p_t7_note.runs[0].font.size = Pt(8.5)
     p_t7_note.runs[0].font.italic = True
     p_t7_note.paragraph_format.space_after = Pt(10)
@@ -387,7 +387,7 @@ def create_document():
             t8.rows[i+1].cells[j].paragraphs[0].text = val
     style_academic_table(t8, [1.8, 1.2, 1.2, 1.0, 1.1, 1.5], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
     
-    p_t8_note = doc.add_paragraph("Note: GEE models specified Binomial family, logit link, exchangeable correlation structure across 40 patient clusters (mean cluster size = 2.95 teeth). All statistical conclusions remain completely robust.")
+    p_t8_note = doc.add_paragraph("Note: GEE models specified Binomial family, logit link, exchangeable correlation structure across 40 patient clusters (mean cluster size = 2.95 teeth). Sensitivity models supported the direction and statistical significance of the primary findings.")
     p_t8_note.runs[0].font.size = Pt(8.5)
     p_t8_note.runs[0].font.italic = True
     p_t8_note.paragraph_format.space_after = Pt(14)
@@ -423,10 +423,10 @@ def create_document():
 
     add_custom_heading("4.4 Age Subgroup Influence and Behavioral Cooperation", level=2)
     p = doc.add_paragraph("A statistically significant difference in retention was identified across age groups (Mann-Whitney U = 1328.0, Z = -2.726, p = 0.006; GEE cluster-adjusted p = 0.0003). Children older than 10 years (11–12 years) achieved 81.5% complete retention and 0.0% total loss, whereas children aged ≤ 10 years (8–10 years) exhibited 60.4% complete retention and all 5 cases of total loss (9.4%).")
-    p = doc.add_paragraph("This outcome reflects two intertwined factors: first, older pediatric patients demonstrate greater psychological maturity and behavioral cooperation in the dental chair, facilitating superior moisture control. Second, permanent premolars and second molars in older children have achieved full clinical crown eruption, eliminating the subgingival distal operculum often present in newly erupted first molars of younger children.")
+    p = doc.add_paragraph("This difference may be related to improved patient cooperation and greater clinical crown eruption in older children. Older pediatric patients typically demonstrate greater chairside maturity, facilitating moisture control, while teeth in 11–12-year-olds have generally achieved full clinical crown emergence, reducing the interference of subgingival opercula.")
 
     add_custom_heading("4.5 Methodological Strengths and Clustering Sensitivity", level=2)
-    p = doc.add_paragraph("A key methodological consideration in oral health research is the nested nature of multi-tooth interventions within patients. By conducting both primary tooth-level non-parametric tests and cluster-adjusted Generalized Estimating Equations (GEE), our study verified that intra-subject correlation (clustering within the 40 participants) did not alter any statistical inferences. Both the molar disadvantage (GEE p = 0.005) and the older age benefit (GEE p = 0.0003) remained robustly significant, providing strong methodological validity.")
+    p = doc.add_paragraph("A key methodological consideration in oral health research is the nested nature of multi-tooth interventions within patients. By conducting both primary tooth-level non-parametric tests and cluster-adjusted Generalized Estimating Equations (GEE), our study verified that accounting for intra-subject correlation supported the direction and statistical significance of all primary findings. Both the molar disadvantage (GEE p = 0.005) and the older age benefit (GEE p = 0.0003) remained robustly significant, providing strong methodological validity.")
 
     # 5. CONCLUSIONS
     add_custom_heading("5. Conclusions & Clinical Recommendations", level=1)

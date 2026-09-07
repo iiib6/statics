@@ -323,7 +323,7 @@ def create_doctor_report():
     add_custom_heading("3.3 Finding 3: Demographic Influences — Age Significance and Gender Equivalence", level=2)
     p = doc.add_paragraph("Statistical Result for Age: Sealant retention differed significantly between age groups (Mann-Whitney U = 1328.0, Z = -2.726, p = 0.006). Older children (> 10 years; 11–12 years) achieved 81.5% complete retention (n = 53/65) and 0.0% complete loss, whereas younger children (≤ 10 years; 8–10 years) achieved 60.4% complete retention (n = 32/53) and accounted for all 5 cases of complete sealant loss (9.4%).")
     
-    p = doc.add_paragraph("Clinical & Behavioral Rationale for Age: Older children exhibit superior chairside behavioral cooperation, facilitating uninterrupted etching, washing, and drying. Furthermore, premolars and second molars in 11–12-year-olds have reached full clinical crown emergence, avoiding subgingival opercula and moisture pooling commonly encountered in recently erupted molars of younger children.")
+    p = doc.add_paragraph("Clinical & Behavioral Rationale for Age: This difference may be related to improved patient cooperation and greater clinical crown eruption in older children. Older pediatric patients typically demonstrate greater chairside maturity, facilitating moisture control during etching and curing, while teeth in 11–12-year-olds have generally achieved full clinical crown emergence, reducing the likelihood of subgingival opercula interfering with dry-field maintenance.")
 
     p = doc.add_paragraph("Statistical Result for Gender: Sealant retention showed no statistically significant difference between male and female patients (Mann-Whitney U = 1441.5, Z = -1.221, p = 0.222). Complete retention was 76.0% in boys (n = 57/75) and 65.1% in girls (n = 28/43), confirming clinical and biological equivalence.")
 
@@ -379,7 +379,7 @@ def create_doctor_report():
     add_custom_heading("3.5 Finding 5: Baseline DMFT/DMFS Indices Stratified by Retention Outcome", level=2)
     p = doc.add_paragraph("Statistical Result: Due to the count/ordinal nature of caries indices and the small sample size in the complete loss group (Score 2, n = 5), the non-parametric Kruskal-Wallis H-test was conducted to compare baseline DMFT and DMFS across retention groups. No statistically significant differences were observed across the three retention outcomes (Baseline DMFT: H = 0.566, df = 2, p = 0.753; Baseline DMFS: H = 0.601, df = 2, p = 0.740). Supplementary one-way ANOVA yielded identical non-significant conclusions (DMFT: F = 0.187, p = 0.830; DMFS: F = 0.345, p = 0.709).")
     
-    p = doc.add_paragraph("Clinical Deduction: This confirms that a patient's pre-existing baseline caries severity did not confound the technical retention of the sealant. Retention failure was governed by anatomical morphology and moisture isolation rather than individual baseline caries susceptibility.")
+    p = doc.add_paragraph("Clinical Deduction: No statistically significant differences in baseline DMFT or DMFS were observed across retention groups, suggesting no evidence of baseline caries severity differences between groups. Technical retention failure was primarily governed by anatomical tooth morphology and moisture isolation rather than measurable differences in baseline caries indices.")
 
     # Table 6: Baseline DMFT Stratification
     add_custom_heading("Table 6. Baseline DMFT and DMFS indices across 3-Month Retention Groups", level=3)
@@ -397,7 +397,7 @@ def create_doctor_report():
             t6.rows[i+1].cells[j].paragraphs[0].text = val
     style_academic_table(t6, [1.8, 0.7, 1.4, 1.4, 1.3, 1.3], [WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER])
     
-    p_t6_note = doc.add_paragraph("Note: Non-parametric Kruskal-Wallis H-test is reported as primary due to skewed distribution and small subgroup size in Score 2 (n = 5). Differences were non-significant (p > 0.05), confirming absence of baseline confounding.")
+    p_t6_note = doc.add_paragraph("Note: Non-parametric Kruskal-Wallis H-test is reported as primary due to skewed distribution and small subgroup size in Score 2 (n = 5). Differences were non-significant (p > 0.05), suggesting no evidence of baseline caries severity differences between retention groups.")
     p_t6_note.runs[0].font.size = Pt(8.5)
     p_t6_note.runs[0].font.italic = True
     p_t6_note.paragraph_format.space_after = Pt(10)
@@ -408,7 +408,7 @@ def create_doctor_report():
     add_custom_heading("3.6 Methodological Sensitivity Analysis: Accounting for Clustered Teeth within Patients", level=2)
     p = doc.add_paragraph("Methodological Context: In dental clinical trials, evaluating multiple teeth per subject (nested/clustered design) can violate the assumption of observation independence if standard unadjusted tooth-level tests are used alone. In this cohort, 118 teeth were evaluated across 40 patients (cluster size range: 1–8 teeth, mean: 2.95 teeth/patient). To verify whether clustering within the child influenced statistical inferences, a sensitivity analysis was performed using Generalized Estimating Equations (GEE) with an exchangeable correlation structure and robust Huber-White standard errors.")
     
-    p = doc.add_paragraph("Sensitivity Findings: The GEE modeling demonstrated that accounting for intra-subject correlation fully corroborated all primary findings:")
+    p = doc.add_paragraph("Sensitivity Findings: The GEE modeling demonstrated that accounting for intra-subject correlation supported the direction and statistical significance of the primary findings:")
     
     bp_g1 = doc.add_paragraph(style='List Bullet')
     bp_g1.add_run("Tooth Type: ").bold = True
@@ -464,7 +464,7 @@ def create_doctor_report():
 
     bp_s4 = doc.add_paragraph(style='List Bullet')
     bp_s4.add_run("4. Age-Dependent Compliance & Crown Emergence: ").bold = True
-    bp_s4.add_run("Children older than 10 years achieved significantly higher retention than younger children (81.5% vs. 60.4%, p = 0.006; GEE cluster-adjusted p = 0.0003). This is attributed to enhanced patient cooperation and complete clinical crown emergence free of overlying gingival tissue.")
+    bp_s4.add_run("Children older than 10 years achieved significantly higher retention than younger children (81.5% vs. 60.4%, p = 0.006; GEE cluster-adjusted p = 0.0003). This difference may be related to improved patient cooperation and greater clinical crown eruption free of overlying gingival tissue in older children.")
 
     bp_s5 = doc.add_paragraph(style='List Bullet')
     bp_s5.add_run("5. Retention Status and Caries Association: ").bold = True
